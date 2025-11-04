@@ -1,0 +1,262 @@
+from Normalization import Normalization
+from TextProcessor import TextProcessor
+from WebCrawler import *
+from abc import ABC, abstractmethod
+import os
+import time
+import math
+
+class Dictionary:
+    def __init__(self):
+        self.vocabulary = {}
+
+    def getVocabulary(self):
+        return self.vocabulary
+    
+    def getSize(self):
+        return len(self.vocabulary)
+    
+    def getTermFrequency(self, term, docID):
+        if term in self.vocabulary:
+            return len(self.vocabulary[term].getContents()[docID])
+        else:
+            return 0
+        
+    def getDocumentFrequency(self, term):
+        if term in self.vocabulary:
+            return self.vocabulary[term].getSize()
+        else:
+            return 0
+        
+    def getTF_IDF(self, term, docID):
+        base = 10
+
+        #Calculate TF
+        rawTF = self.getTermFrequency(term, docID)
+        tf = math.log(rawTF + 1, base)
+
+        #Calculate IDF
+        rawIDF = 1 / self.getDocumentFrequency(term)
+        idf = math.log(rawIDF)
+
+        return tf * idf
+    
+    def setVocabulary(self, vocabulary):
+        self.vocabulary = vocabulary
+    
+    def add(self, term, posting):
+        if term not in self.vocabulary:
+            self.vocabulary[term] = posting
+        else:
+            self.vocabulary[term].add(posting)
+    
+    def sort(self):
+        if self.getSize() <= 1:
+            return
+        
+        vocabulary = self.vocabulary
+
+        terms = list(vocabulary.keys())
+        terms.sort()
+
+        sortedVocabulary = {term: vocabulary[term] for term in terms}
+        self.setVocabulary(sortedVocabulary)
+        
+    def searchFor(self, term):
+        if term in self.vocabulary:
+            return self.getVocabulary()[term]
+        else:
+            return None
+
+
+class PostingsList:
+    def __init__(self, contents = None):
+        self.contents = {}
+        if contents is not None:
+            self.contents = contents #should be a dictionary of the form: {docID: [positions]}
+
+    def getContents(self):
+        return self.contents
+    
+    def getSize(self):
+        return len(self.contents)
+    
+    def setContents(self, contents):
+        self.contents = contents
+    
+    def add(self, newPostingsList):
+        newContents = newPostingsList.getContents()
+        for docID in newContents:
+            if docID in self.contents:
+                self.contents[docID].extend(newContents[docID])
+            else:
+                self.contents[docID] = newContents[docID]
+
+    def sort(self):
+        if self.getSize() <= 1:
+            return
+        
+        docIDs = list(self.contents.keys())
+        docIDs.sort()
+
+        sortedPL = {docID: sorted(self.contents[docID]) for docID in docIDs}
+        self.setContents(sortedPL)
+
+    def toString(self):
+        if not self.contents:
+            return ""
+        else:
+            return ", ".join(f"{docID}{positions}" for docID, positions in self.contents.items())
+
+
+class Strategy(ABC):
+    def __init__(self, type = "None"):
+        self.type = type
+
+    def getType(self):
+        return self.type
+
+    def setType(self, type):
+        self.type = type
+
+    @abstractmethod
+    def add(self, token, posting, dictionary):
+        pass
+
+    @abstractmethod
+    def sort(self, dictionary):
+        pass
+
+class BSBI(Strategy):
+    def __init__(self):
+        super().__init__("BSBI")
+
+    def add(self, token, posting, dictionary):
+        pass
+
+    def sort(self, dictionary):        
+        pass
+
+class SPIMI(Strategy):
+    def __init__(self):
+        super().__init__("BSBI")
+
+    def add(self, token, posting, dictionary):
+        term = Normalization.normalize(token)
+
+        vocabulary = dictionary.getVocabulary()
+        if term is None:
+            return
+        elif term in vocabulary: #If term is None, then this means the token was filtered out during the normalization process and is therefore not to be added to the dictionary
+            vocabulary[term].add(PostingsList(posting))
+        else:
+            dictionary.add(term, PostingsList(posting))
+
+    def sort(self, dictionary):        
+        dictionary.sort()
+        vocabulary = dictionary.getVocabulary()
+
+        for term in vocabulary:
+            vocabulary[term].sort()
+
+
+class InvertedIndex:
+    def __init__(self):
+        self.dictionary = Dictionary()
+        self.strategy = None
+        self.capacity = 0
+
+    def getDictionary(self):
+        return self.dictionary
+
+    def getStrategy(self):
+        return self.strategy
+    
+    def getCapacity(self):
+        return self.capacity
+    
+    def setDictionary(self, dictionary):
+        self.dictionary = dictionary
+    
+    def setStrategy(self, strategy):
+        self.strategy = strategy
+
+    def setCapacity(self, capacity):
+        self.capacity = capacity
+    
+    def add(self, token, docID, position):
+        posting = {docID: [position]}
+        self.strategy.add(token, posting, self.getDictionary())
+
+    def hasReachedFullCapacity(self):
+        if self.getDictionary().getSize() == self.getCapacity():
+            return True
+        else:
+            return False
+
+    def chooseStrategy(self):
+        validInput = False
+        while not validInput:
+            userInput = input("Choose a strategy (BSBI or SPIMI): ").strip().upper()
+            if userInput == "BSBI":
+                validInput = True
+                self.setStrategy(BSBI())
+
+                #DELETE ONCE BSBI IS IMPLEMENTED
+                validInput = False
+                print("Yeah... I don't think so, buddy. Choose again.\n")
+            elif userInput == "SPIMI":
+                validInput = True
+                self.setStrategy(SPIMI())
+            else:
+                print("Invalid strategy entered. Please try again.\n")
+
+    def populate(self):
+        projectNum = 2
+        if projectNum == 1:
+            TextProcessor.run(self)
+        elif projectNum == 2:
+            crawler = WebCrawler()
+            crawler.run(self)
+
+    def sort(self):
+        self.strategy.sort(self.getDictionary())
+
+    def writeToFile(self, filename):
+        MY_FILE = os.path.join(os.getcwd(), filename)
+        
+        vocabulary = self.getDictionary().getVocabulary()
+        with open(MY_FILE, "w", encoding = "utf-8") as f:
+            for term in vocabulary:
+                postingsList = vocabulary[term]
+                docFrequency = postingsList.getSize()
+
+                f.write(f"{term} ({docFrequency}) --> {postingsList.toString()}\n")
+
+        print(f"Indexer contents have been stored at {MY_FILE}\n")
+
+    def display(self):
+        vocabulary = self.getDictionary().getVocabulary()
+        for term in vocabulary:
+            postingsList = vocabulary[term]
+            docFrequency = postingsList.getSize()
+
+            print(f"{term} ({docFrequency}) --> {postingsList.toString()}")
+    
+    def run(self):
+        self.chooseStrategy()
+        self.setCapacity(1000)
+        
+        start = time.perf_counter()
+        self.populate()
+        end = time.perf_counter()
+        elapsed = end - start
+        print(f"Populating time: {elapsed:.4f} seconds.\n")
+        
+        start = time.perf_counter()
+        self.sort()
+        end = time.perf_counter()
+        elapsed = end - start
+        print(f"Sorting time: {elapsed:.4f} seconds.\n")
+
+        self.writeToFile("my_results.txt")

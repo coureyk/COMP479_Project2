@@ -1,7 +1,6 @@
 import os
 import nltk
 from bs4 import BeautifulSoup
-nltk.download("punkt")
 
 class TextProcessor:
     def process(SGM_DIR, indexer):

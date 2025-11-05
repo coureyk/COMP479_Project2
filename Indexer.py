@@ -92,7 +92,7 @@ class PostingsList:
             else:
                 self.contents[docID] = newContents[docID]
 
-    def sort(self):
+    def sortByDocID(self):
         if self.getSize() <= 1:
             return
         
@@ -101,6 +101,21 @@ class PostingsList:
 
         sortedPL = {docID: sorted(self.contents[docID]) for docID in docIDs}
         self.setContents(sortedPL)
+
+    def sortByWeight(self, dictionary, term):
+
+        #Collect list of (docID, weight) tuples.
+        listOfTuples = []
+        for docID in self.getContents():
+            weight = dictionary.getTF_IDF(term, docID)
+            myTuple = (docID, weight)
+            listOfTuples.append(myTuple)
+
+        listOfTuples.sort(key=lambda myTuple: myTuple[1]) #Sort list of (docID, weight) tuples based on weight.
+
+        sortedPL = {docID: sorted(self.contents[docID]) for (docID, weight) in listOfTuples} #Reorder docIDs based on the sorted list of (docID, weight) tuples.
+        self.setContents(sortedPL)
+
 
     def toString(self):
         if not self.contents:
@@ -134,7 +149,7 @@ class BSBI(Strategy):
     def add(self, token, posting, dictionary):
         pass
 
-    def sort(self, dictionary):        
+    def sort(self, indexer):        
         pass
 
 class SPIMI(Strategy):
@@ -152,12 +167,17 @@ class SPIMI(Strategy):
         else:
             dictionary.add(term, PostingsList(posting))
 
-    def sort(self, dictionary):        
+    def sort(self, indexer):
+        dictionary = indexer.getDictionary()
         dictionary.sort()
+        
         vocabulary = dictionary.getVocabulary()
-
-        for term in vocabulary:
-            vocabulary[term].sort()
+        if indexer.getHasRankedRetrievalEnabled() is True:
+            for term in vocabulary:
+                vocabulary[term].sortByWeight(indexer.getDictionary(), term)
+        else:
+            for term in vocabulary:
+                vocabulary[term].sortByDocID()
 
 
 class InvertedIndex:
@@ -240,7 +260,7 @@ class InvertedIndex:
             crawler.run(self)
 
     def sort(self):
-        self.strategy.sort(self.getDictionary())
+        self.strategy.sort(self)
 
     def writeToFile(self, filename):
         MY_FILE = os.path.join(os.getcwd(), filename)

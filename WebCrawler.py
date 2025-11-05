@@ -8,7 +8,6 @@ import time
 import os
 import shutil
 import nltk
-nltk.download("punkt")
 
 class WebCrawler:
     def __init__(self):

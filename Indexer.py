@@ -165,6 +165,7 @@ class InvertedIndex:
         self.dictionary = Dictionary()
         self.strategy = None
         self.capacity = 0
+        self.hasRankedRetrievalEnabled = False
 
     def getDictionary(self):
         return self.dictionary
@@ -175,6 +176,9 @@ class InvertedIndex:
     def getCapacity(self):
         return self.capacity
     
+    def getHasRankedRetrievalEnabled(self):
+        return self.hasRankedRetrievalEnabled
+    
     def setDictionary(self, dictionary):
         self.dictionary = dictionary
     
@@ -183,6 +187,9 @@ class InvertedIndex:
 
     def setCapacity(self, capacity):
         self.capacity = capacity
+
+    def setHasRankedRetrievalEnabled(self, hasRankedRetrievalEnabled):
+        self.hasRankedRetrievalEnabled = hasRankedRetrievalEnabled
     
     def add(self, token, docID, position):
         posting = {docID: [position]}
@@ -210,6 +217,19 @@ class InvertedIndex:
                 self.setStrategy(SPIMI())
             else:
                 print("Invalid strategy entered. Please try again.\n")
+        
+    def chooseRankingAbility(self):
+        validInput = False
+        while not validInput:
+            userInput = input("Would you like to enable ranked retrieval? (Enter Y/N): ").strip().upper()
+            if userInput == "Y" or userInput == "YES":
+                validInput = True
+                self.setHasRankedRetrievalEnabled(True)
+            elif userInput == "N" or userInput == "NO":
+                validInput = True
+                self.setHasRankedRetrievalEnabled(False)
+            else:
+                print("Invalid choice entered. Please try again.\n")
 
     def populate(self):
         projectNum = 2
@@ -245,6 +265,9 @@ class InvertedIndex:
     
     def run(self):
         self.chooseStrategy()
+        self.chooseRankingAbility() #This will determine the sorting algorithm for the postings list (Enabled = sorted by tf-idf weights. Disabled = sorted by docID)
+        print()
+        
         self.setCapacity(1000)
         
         start = time.perf_counter()

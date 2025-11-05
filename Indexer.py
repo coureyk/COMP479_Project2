@@ -1,10 +1,8 @@
-from Normalization import Normalization
+from Strategies import *
 from TextProcessor import TextProcessor
 from WebCrawler import *
-from abc import ABC, abstractmethod
 import os
 import time
-import math
 
 class Dictionary:
     def __init__(self):
@@ -15,31 +13,6 @@ class Dictionary:
     
     def getSize(self):
         return len(self.vocabulary)
-    
-    def getTermFrequency(self, term, docID):
-        if term in self.vocabulary:
-            return len(self.vocabulary[term].getContents()[docID])
-        else:
-            return 0
-        
-    def getDocumentFrequency(self, term):
-        if term in self.vocabulary:
-            return self.vocabulary[term].getSize()
-        else:
-            return 0
-        
-    def getTF_IDF(self, term, docID):
-        base = 10
-
-        #Calculate TF
-        rawTF = self.getTermFrequency(term, docID)
-        tf = math.log(rawTF + 1, base)
-
-        #Calculate IDF
-        rawIDF = 1 / self.getDocumentFrequency(term)
-        idf = math.log(rawIDF)
-
-        return tf * idf
     
     def setVocabulary(self, vocabulary):
         self.vocabulary = vocabulary
@@ -92,7 +65,7 @@ class PostingsList:
             else:
                 self.contents[docID] = newContents[docID]
 
-    def sortByDocID(self):
+    def sort(self):
         if self.getSize() <= 1:
             return
         
@@ -102,21 +75,6 @@ class PostingsList:
         sortedPL = {docID: sorted(self.contents[docID]) for docID in docIDs}
         self.setContents(sortedPL)
 
-    def sortByWeight(self, dictionary, term):
-
-        #Collect list of (docID, weight) tuples.
-        listOfTuples = []
-        for docID in self.getContents():
-            weight = dictionary.getTF_IDF(term, docID)
-            myTuple = (docID, weight)
-            listOfTuples.append(myTuple)
-
-        listOfTuples.sort(key=lambda myTuple: myTuple[1]) #Sort list of (docID, weight) tuples based on weight.
-
-        sortedPL = {docID: sorted(self.contents[docID]) for (docID, weight) in listOfTuples} #Reorder docIDs based on the sorted list of (docID, weight) tuples.
-        self.setContents(sortedPL)
-
-
     def toString(self):
         if not self.contents:
             return ""
@@ -124,68 +82,12 @@ class PostingsList:
             return ", ".join(f"{docID}{positions}" for docID, positions in self.contents.items())
 
 
-class Strategy(ABC):
-    def __init__(self, type = "None"):
-        self.type = type
-
-    def getType(self):
-        return self.type
-
-    def setType(self, type):
-        self.type = type
-
-    @abstractmethod
-    def add(self, token, posting, dictionary):
-        pass
-
-    @abstractmethod
-    def sort(self, dictionary):
-        pass
-
-class BSBI(Strategy):
-    def __init__(self):
-        super().__init__("BSBI")
-
-    def add(self, token, posting, dictionary):
-        pass
-
-    def sort(self, indexer):        
-        pass
-
-class SPIMI(Strategy):
-    def __init__(self):
-        super().__init__("BSBI")
-
-    def add(self, token, posting, dictionary):
-        term = Normalization.normalize(token)
-
-        vocabulary = dictionary.getVocabulary()
-        if term is None:
-            return
-        elif term in vocabulary: #If term is None, then this means the token was filtered out during the normalization process and is therefore not to be added to the dictionary
-            vocabulary[term].add(PostingsList(posting))
-        else:
-            dictionary.add(term, PostingsList(posting))
-
-    def sort(self, indexer):
-        dictionary = indexer.getDictionary()
-        dictionary.sort()
-        
-        vocabulary = dictionary.getVocabulary()
-        if indexer.getHasRankedRetrievalEnabled() is True:
-            for term in vocabulary:
-                vocabulary[term].sortByWeight(indexer.getDictionary(), term)
-        else:
-            for term in vocabulary:
-                vocabulary[term].sortByDocID()
-
-
 class InvertedIndex:
     def __init__(self):
         self.dictionary = Dictionary()
         self.strategy = None
         self.capacity = 0
-        self.hasRankedRetrievalEnabled = False
+        self.rankingEnabled = False
 
     def getDictionary(self):
         return self.dictionary
@@ -196,8 +98,8 @@ class InvertedIndex:
     def getCapacity(self):
         return self.capacity
     
-    def getHasRankedRetrievalEnabled(self):
-        return self.hasRankedRetrievalEnabled
+    def hasRankingEnabled(self):
+        return self.rankingEnabled
     
     def setDictionary(self, dictionary):
         self.dictionary = dictionary
@@ -208,11 +110,11 @@ class InvertedIndex:
     def setCapacity(self, capacity):
         self.capacity = capacity
 
-    def setHasRankedRetrievalEnabled(self, hasRankedRetrievalEnabled):
-        self.hasRankedRetrievalEnabled = hasRankedRetrievalEnabled
+    def setRankingEnabled(self, rankingEnabled):
+        self.rankingEnabled = rankingEnabled
     
     def add(self, token, docID, position):
-        posting = {docID: [position]}
+        posting = PostingsList({docID: [position]})
         self.strategy.add(token, posting, self.getDictionary())
 
     def hasReachedFullCapacity(self):
@@ -244,10 +146,10 @@ class InvertedIndex:
             userInput = input("Would you like to enable ranked retrieval? (Enter Y/N): ").strip().upper()
             if userInput == "Y" or userInput == "YES":
                 validInput = True
-                self.setHasRankedRetrievalEnabled(True)
+                self.setRankingEnabled(True)
             elif userInput == "N" or userInput == "NO":
                 validInput = True
-                self.setHasRankedRetrievalEnabled(False)
+                self.setRankingEnabled(False)
             else:
                 print("Invalid choice entered. Please try again.\n")
 

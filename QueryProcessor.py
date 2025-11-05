@@ -1,15 +1,20 @@
 from Normalization import *
+from Indexer import *
 
 class Query:
     def __init__(self, query):
         self.originalQuery = query
         self.normalizedQuery = Normalization.normalize(Query.tokenize(query))
+        self.index = InvertedIndex() #Essential for determining tf_idf of query terms (Since all Ranker methods require a vocabulary object to be passed as an argument).
 
     def getOriginalQuery(self):
         return self.originalQuery
 
     def getNormalizedQuery(self):
         return self.normalizedQuery
+    
+    def getIndex(self):
+        return self.index
         
     def setOriginalQuery(self, originalQuery):
         self.originalQuery = originalQuery
@@ -17,15 +22,19 @@ class Query:
     def setNormalizedQuery(self, normalizedQuery):
         self.normalizedQuery = normalizedQuery
 
+    def setIndex(self, index):
+        self.dictionary = index
+
     def tokenize(query):
         return nltk.word_tokenize(query)
 
         
 class QueryProcessor:
-    def __init__(self):
+    def __init__(self, strategy):
         self.type = "None"
         self.query = None
         self.retrievedDocs = None
+        self.strategy = strategy
 
     def getType(self):
         return self.type
@@ -35,6 +44,9 @@ class QueryProcessor:
     
     def getRetrievedDocs(self):
         return self.retrievedDocs
+    
+    def getStrategy(self):
+        return self.strategy
 
     def setType(self, type):
         self.type = type
@@ -45,13 +57,25 @@ class QueryProcessor:
     def setRetrievedDocs(self, retrievedDocs):
         self.retrievedDocs = retrievedDocs
 
+    def setStrategy(self, strategy):
+        self.strategy = strategy
+
     def promptUserForQuery(self):
         validInput = False
         while not validInput:
             queryStr = input("Enter query: ").strip()
             query = Query(queryStr)
+
             if query.getNormalizedQuery() is not None:
                 validInput = True
+
+                query.getIndex().setStrategy(self.strategy)
+                docID = 0
+                position = 0
+                for term in query.getNormalizedQuery():
+                    query.getIndex().add(term, docID, position)
+                    position += 1
+
                 self.setQuery(query)
             else:
                 print("Your search query is invalid. Please try again.\n")

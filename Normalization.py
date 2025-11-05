@@ -116,7 +116,5 @@ class Normalization():
         
         if len(normalizedTokens) == 0:
             return None
-        elif len(normalizedTokens) == 1:
-            return normalizedTokens[0]
         else:
             return normalizedTokens

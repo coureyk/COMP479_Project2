@@ -2,6 +2,7 @@ import os
 import nltk
 from bs4 import BeautifulSoup
 
+#Used for Project 1; not Project 2
 class TextProcessor:
     def process(SGM_DIR, indexer):
         #List containing all .sgm files from Reuters-21578

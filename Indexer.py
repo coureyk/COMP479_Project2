@@ -17,11 +17,11 @@ class Dictionary:
     def setVocabulary(self, vocabulary):
         self.vocabulary = vocabulary
     
-    def add(self, term, posting):
+    def add(self, term, postingsList):
         if term not in self.vocabulary:
-            self.vocabulary[term] = posting
+            self.vocabulary[term] = postingsList
         else:
-            self.vocabulary[term].add(posting)
+            self.vocabulary[term].add(postingsList)
     
     def sort(self):
         if self.getSize() <= 1:
@@ -46,7 +46,7 @@ class PostingsList:
     def __init__(self, contents = None):
         self.contents = {}
         if contents is not None:
-            self.contents = contents #should be a dictionary of the form: {docID: [positions]}
+            self.contents = contents #Stores a dictionary of the form: {docID: [positions]}
 
     def getContents(self):
         return self.contents
@@ -114,8 +114,8 @@ class InvertedIndex:
         self.rankingEnabled = rankingEnabled
     
     def add(self, token, docID, position):
-        posting = PostingsList({docID: [position]})
-        self.strategy.add(token, posting, self.getDictionary())
+        postingsList = PostingsList({docID: [position]})
+        self.strategy.add(token, postingsList, self.getDictionary())
 
     def hasReachedFullCapacity(self):
         if self.getDictionary().getSize() == self.getCapacity():
@@ -204,4 +204,4 @@ class InvertedIndex:
         elapsed = end - start
         print(f"Sorting time: {elapsed:.4f} seconds.\n")
 
-        self.writeToFile("my_results.txt")
+        self.writeToFile(r"Results\my_results.txt")

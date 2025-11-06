@@ -33,7 +33,7 @@ class SPIMI(Strategy):
     def __init__(self):
         super().__init__("SPIMI")
 
-    def add(self, token, posting, dictionary):
+    def add(self, token, postingsList, dictionary):
         term = Normalization.normalize(token) #Note that Normalization.normalize either returns None or a list of Strings
         if term is None: #If term is None, then this means the token was filtered out during the normalization process and is therefore not to be added to the dictionary
             return
@@ -41,9 +41,9 @@ class SPIMI(Strategy):
         term = term[0]
         vocabulary = dictionary.getVocabulary()
         if term in vocabulary: 
-            vocabulary[term].add(posting)
+            vocabulary[term].add(postingsList)
         else:
-            dictionary.add(term, posting)
+            dictionary.add(term, postingsList)
 
     def sort(self, indexer):
         dictionary = indexer.getDictionary()

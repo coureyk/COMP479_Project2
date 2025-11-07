@@ -1,6 +1,6 @@
 from Strategies import *
 from TextProcessor import TextProcessor
-from WebCrawler import *
+from MyCrawler.MyCrawler.spiders.WebCrawler import *
 import os
 import time
 

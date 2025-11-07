@@ -1,4 +1,4 @@
-# Scrapy settings for Project2 project
+# Scrapy settings for MyCrawler project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -7,16 +7,16 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = "Project2"
+BOT_NAME = "MyCrawler"
 
-SPIDER_MODULES = ["Project2.spiders"]
-NEWSPIDER_MODULE = "Project2.spiders"
+SPIDER_MODULES = ["MyCrawler.spiders"]
+NEWSPIDER_MODULE = "MyCrawler.spiders"
 
 ADDONS = {}
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = "Project2 (+http://www.yourdomain.com)"
+#USER_AGENT = "MyCrawler (+http://www.yourdomain.com)"
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -41,13 +41,13 @@ DOWNLOAD_DELAY = 1
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    "Project2.middlewares.Project2SpiderMiddleware": 543,
+#    "MyCrawler.middlewares.MycrawlerSpiderMiddleware": 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    "Project2.middlewares.Project2DownloaderMiddleware": 543,
+#    "MyCrawler.middlewares.MycrawlerDownloaderMiddleware": 543,
 #}
 
 # Enable or disable extensions
@@ -59,7 +59,7 @@ DOWNLOAD_DELAY = 1
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 #ITEM_PIPELINES = {
-#    "Project2.pipelines.Project2Pipeline": 300,
+#    "MyCrawler.pipelines.MycrawlerPipeline": 300,
 #}
 
 # Enable and configure the AutoThrottle extension (disabled by default)

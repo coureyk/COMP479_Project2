@@ -1,6 +1,10 @@
 from Strategies import *
 from TextProcessor import TextProcessor
-from MyCrawler.MyCrawler.spiders.WebCrawler import *
+
+from scrapy.crawler import CrawlerProcess
+from scrapy.utils.project import get_project_settings
+from MyCrawler.MyCrawler.spiders.WebCrawler import WebCrawler
+
 import os
 import time
 
@@ -158,8 +162,9 @@ class InvertedIndex:
         if projectNum == 1:
             TextProcessor.run(self)
         elif projectNum == 2:
-            crawler = WebCrawler()
-            crawler.run(self)
+            process = CrawlerProcess(get_project_settings())
+            process.crawl(WebCrawler, indexer = self)
+            process.start()
 
     def sort(self):
         self.strategy.sort(self)
@@ -187,10 +192,10 @@ class InvertedIndex:
     
     def run(self):
         self.chooseStrategy()
-        self.chooseRankingAbility() #This will determine the sorting algorithm for the postings list (Enabled = sorted by tf-idf weights. Disabled = sorted by docID)
+        self.chooseRankingAbility()
         print()
         
-        self.setCapacity(1000)
+        self.setCapacity(10000)
         
         start = time.perf_counter()
         self.populate()

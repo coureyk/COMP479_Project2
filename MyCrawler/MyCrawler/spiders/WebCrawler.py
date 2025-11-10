@@ -1,7 +1,6 @@
 from pypdf import PdfReader
 from scrapy.spiders import CrawlSpider, Rule
 from scrapy.linkextractors import LinkExtractor
-from pathlib import Path
 
 import os
 import shutil
@@ -39,29 +38,25 @@ class WebCrawler(CrawlSpider):
         
         self.indexer = indexer
         
-        self.currentFile = Path(__file__).resolve()
-        self.mainProjectDir = self.currentFile.parent.parent.parent.parent
-
-        self.downloadsDir = os.path.join(self.mainProjectDir, "downloads")
+        self.downloadsDir = os.path.join(os.getcwd(), "Downloads")
         if os.path.exists(self.downloadsDir) and os.path.isdir(self.downloadsDir):
             shutil.rmtree(self.downloadsDir)
             print(f"Directory '{self.downloadsDir}' and its contents deleted.")
         os.makedirs(self.downloadsDir)
 
         self.downloadedFiles = set()
-
-        self.pdfCount = 1
     
     def downloadPDF(self, response):
         print()
         print()
         print()
+        curDocID = self.indexer.getNumOfDocumentsCollected() + 1
         print(f"Limit: {self.pdfLimit}")
-        print(f"cur docID: {self.pdfCount}")
+        print(f"cur docID: {curDocID}")
 
         filename = response.url.split("/")[-1]  # e.g. thesis123.pdf
-        filename = "_".join([str(self.pdfCount), filename])
-        if self.pdfCount > self.pdfLimit:
+        filename = "_".join([str(curDocID), filename])
+        if curDocID > self.pdfLimit:
             self.logger.info(f"PDF limit ({self.pdfLimit}) reached. Stopping crawl.")
             self.crawler.engine.close_spider(self, reason="pdf_limit_reached")
             return
@@ -81,7 +76,7 @@ class WebCrawler(CrawlSpider):
         #Feed text one token at a time to the inverted index
         hasTokens = False
         reader = PdfReader(pdfPath)
-        logInfoPath = os.path.join(self.downloadsDir, f"logInfo{self.pdfCount}.txt")
+        logInfoPath = os.path.join(self.downloadsDir, f"logInfo{curDocID}.txt")
         with open(logInfoPath, 'w', encoding = "utf-8") as file:
             position = 1
             for i in range(len(reader.pages)):
@@ -103,11 +98,11 @@ class WebCrawler(CrawlSpider):
 
                 hasTokens = True
                 for token in tokens:
-                    file.write(f"{token}. Doc ID: {self.pdfCount}. Pos: {position}\n")
+                    file.write(f"{token}. Doc ID: {curDocID}. Pos: {position}\n")
                     if self.indexer.hasReachedFullCapacity():
                         break
                     else:
-                        self.indexer.add(token, self.pdfCount, position)
+                        self.indexer.add(token, curDocID, position)
                         position += 1
 
                 if self.indexer.hasReachedFullCapacity():
@@ -119,5 +114,6 @@ class WebCrawler(CrawlSpider):
             return
         else:
             self.downloadedFiles.add(filename)
-            self.pdfCount += 1
+            self.indexer.setNumOfDocumentsCollected(curDocID)
+            curDocID += 1
             print(f"Saved and indexed file: {pdfPath}")

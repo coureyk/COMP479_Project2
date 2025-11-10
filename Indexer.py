@@ -91,6 +91,7 @@ class InvertedIndex:
         self.dictionary = Dictionary()
         self.strategy = None
         self.capacity = 0
+        self.numOfDocumentsCollected = 0
         self.rankingEnabled = False
 
     def getDictionary(self):
@@ -101,6 +102,9 @@ class InvertedIndex:
     
     def getCapacity(self):
         return self.capacity
+    
+    def getNumOfDocumentsCollected(self):
+        return self.numOfDocumentsCollected
     
     def hasRankingEnabled(self):
         return self.rankingEnabled
@@ -113,6 +117,9 @@ class InvertedIndex:
 
     def setCapacity(self, capacity):
         self.capacity = capacity
+
+    def setNumOfDocumentsCollected(self, amount):
+        self.numOfDocumentsCollected = amount
 
     def setRankingEnabled(self, rankingEnabled):
         self.rankingEnabled = rankingEnabled
@@ -191,17 +198,17 @@ class InvertedIndex:
             print(f"{term} ({docFrequency}) --> {postingsList.toString()}")
     
     def run(self):
-        self.chooseStrategy()
-        self.chooseRankingAbility()
+        self.chooseStrategy() #Choose whether you want to populate index using BSBI or SPIMI
+        self.chooseRankingAbility() #Choose whether you want retreived documents to be displayed in numerical order or based on relevance with respect to the corresponding query.
         print()
         
-        self.setCapacity(10000)
+        self.setCapacity(10000) 
         
         start = time.perf_counter()
         self.populate()
         end = time.perf_counter()
         elapsed = end - start
-        print(f"Populating time: {elapsed:.4f} seconds.\n")
+        print(f"\nPopulating time: {elapsed:.4f} seconds.\n")
         
         start = time.perf_counter()
         self.sort()
@@ -209,4 +216,4 @@ class InvertedIndex:
         elapsed = end - start
         print(f"Sorting time: {elapsed:.4f} seconds.\n")
 
-        self.writeToFile(r"Results\my_results.txt")
+        self.writeToFile(r"Results\myResults.txt")

@@ -5,7 +5,7 @@ class Query:
     def __init__(self, query):
         self.originalQuery = query
         self.normalizedQuery = Normalization.normalize(Query.tokenize(query))
-        self.index = InvertedIndex() #Essential for determining tf_idf of query terms (Since all Ranker methods require a vocabulary object to be passed as an argument).
+        self.index = InvertedIndex() #Required for determining tf-idf of query terms
 
     def getOriginalQuery(self):
         return self.originalQuery
@@ -134,12 +134,18 @@ class QueryProcessor:
     
     def run(self, index):
         stopRunning = False
+        allRetrievedDocs = set()
         
         while stopRunning is False:
             self.promptUserForQuery()
 
             intersectOfTargetPLs = QueryProcessor.intersect(self.getQuery(), index.getDictionary())
+            
             self.setRetrievedDocs(intersectOfTargetPLs)
+            if self.getRetrievedDocs() is not None and len(self.getRetrievedDocs()) > 0:
+                allRetrievedDocs.update(self.getRetrievedDocs())
+                print("HELLO")
+                print(allRetrievedDocs)
 
             self.displayResults()
             print()
@@ -155,3 +161,12 @@ class QueryProcessor:
                 else:
                     print("Invalid entry.\n")
             print()
+
+        MY_COLLECTION = os.path.join(os.getcwd(), "Results", "My-collection.txt")
+        with open(MY_COLLECTION, "w", encoding = "utf-8") as f:
+            sortedDocs = sorted(allRetrievedDocs)
+
+            if len(sortedDocs) == 0:
+                f.write("No documents were retrieved during your session.")
+            else:
+                f.write(f"Documents retrieved ({len(sortedDocs)}): {", ".join(f"{docID}" for docID in allRetrievedDocs)}")

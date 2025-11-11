@@ -26,7 +26,7 @@ class BSBI(Strategy):
     def add(self, token, posting, dictionary):
         pass
 
-    def sort(self, indexer):        
+    def sort(self, index):        
         pass
 
 class SPIMI(Strategy):
@@ -45,8 +45,8 @@ class SPIMI(Strategy):
         else:
             dictionary.add(term, postingsList)
 
-    def sort(self, indexer):
-        dictionary = indexer.getDictionary()
+    def sort(self, index):
+        dictionary = index.getDictionary()
         dictionary.sort()
         
         vocabulary = dictionary.getVocabulary()

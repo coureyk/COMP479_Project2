@@ -1,6 +1,5 @@
 from Indexer import *
 from QueryProcessor import *
-from Ranker import *
 from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.cluster import KMeans
 
@@ -46,7 +45,7 @@ def clusterDocs(index):
 
             #Verify that numOfDocumentsCollected is >= numOfClusters (if not, exception will be thrown)
             if index.getNumOfDocumentsCollected() < numOfClusters:
-                f.write(f"\n\nCannot perform k-means clustering when k > {index.getNumOfDocumentsCollected()} (i.e. the # of documents collected).")
+                f.write(f"Error: Cannot perform k-means clustering when k > total documents collected. (k = {numOfClusters}; Total Documents Collected = {index.getNumOfDocumentsCollected()})\n")
                 break
 
             kmeans = KMeans(n_clusters = numOfClusters, random_state=42)
@@ -55,12 +54,13 @@ def clusterDocs(index):
             labels = kmeans.labels_
 
             #Inspect Results
-            print(f"\n\nk = {numOfClusters}\n")
+            f.write(f"k = {numOfClusters}\n")
             clusteredDocs = pd.DataFrame({
                 "docID": docIDs,
                 "cluster": labels
             })
-            print(clusteredDocs)
+            clusteredDocs.to_csv(f, sep = "\t", index = False)
+            f.write("\n")
 
             #See which terms are most characteristic of each cluster
             orderCentroids = kmeans.cluster_centers_.argsort()[:, ::-1]
@@ -69,7 +69,7 @@ def clusterDocs(index):
             for i in range(numOfClusters):
                 f.write(f"Cluster {i}:\n")
                 f.write(", ".join(terms[orderCentroids[i, :50]]))  # top 50 terms
-                f.write("\n")
+                f.write("\n\n")
 
 def main():    
     index = InvertedIndex()
@@ -79,12 +79,6 @@ def main():
     qp.run(index)
 
     clusterDocs(index)
-
-    
-    """
-    if index.hasRankingEnabled() is True and qp.getRetrievedDocs() is not None:
-        Ranker.run(index, qp)
-    """
 
 if __name__ == "__main__":
     main()

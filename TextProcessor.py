@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 
 #Used for Project 1; not Project 2
 class TextProcessor:
-    def process(SGM_DIR, indexer):
+    def process(SGM_DIR, index):
         #List containing all .sgm files from Reuters-21578
         sgmFiles = []
         for f in os.listdir(SGM_DIR):
@@ -31,14 +31,14 @@ class TextProcessor:
                     if text:
                         tokens = nltk.word_tokenize(text)
 
-                        #Create term-docID pairs and add to indexer
+                        #Create term-docID pairs and add to index
                         for token in tokens:
-                            if indexer.hasReachedFullCapacity(): #Assignment Requirement
+                            if index.hasReachedFullCapacity(): #Assignment Requirement
                                 return
                             else:
-                                indexer.add(token, docID, position)
+                                index.add(token, docID, position)
                                 position += 1
 
-    def run(indexer):
+    def run(index):
         SGM_DIR = os.path.join(os.getcwd(), "Reuters21578")
-        TextProcessor.process(SGM_DIR, indexer)
+        TextProcessor.process(SGM_DIR, index)

@@ -92,7 +92,6 @@ class InvertedIndex:
         self.strategy = None
         self.capacity = 0
         self.numOfDocumentsCollected = 0
-        self.rankingEnabled = False
 
     def getDictionary(self):
         return self.dictionary
@@ -106,9 +105,6 @@ class InvertedIndex:
     def getNumOfDocumentsCollected(self):
         return self.numOfDocumentsCollected
     
-    def hasRankingEnabled(self):
-        return self.rankingEnabled
-    
     def setDictionary(self, dictionary):
         self.dictionary = dictionary
     
@@ -120,9 +116,6 @@ class InvertedIndex:
 
     def setNumOfDocumentsCollected(self, amount):
         self.numOfDocumentsCollected = amount
-
-    def setRankingEnabled(self, rankingEnabled):
-        self.rankingEnabled = rankingEnabled
     
     def add(self, token, docID, position):
         postingsList = PostingsList({docID: [position]})
@@ -150,19 +143,6 @@ class InvertedIndex:
                 self.setStrategy(SPIMI())
             else:
                 print("Invalid strategy entered. Please try again.\n")
-        
-    def chooseRankingAbility(self):
-        validInput = False
-        while not validInput:
-            userInput = input("Would you like to enable ranked retrieval? (Enter Y/N): ").strip().upper()
-            if userInput == "Y" or userInput == "YES":
-                validInput = True
-                self.setRankingEnabled(True)
-            elif userInput == "N" or userInput == "NO":
-                validInput = True
-                self.setRankingEnabled(False)
-            else:
-                print("Invalid choice entered. Please try again.\n")
 
     def populate(self):
         projectNum = 2
@@ -170,7 +150,7 @@ class InvertedIndex:
             TextProcessor.run(self)
         elif projectNum == 2:
             process = CrawlerProcess(get_project_settings())
-            process.crawl(WebCrawler, indexer = self)
+            process.crawl(WebCrawler, index = self)
             process.start()
 
     def sort(self):
@@ -187,7 +167,7 @@ class InvertedIndex:
 
                 f.write(f"{term} ({docFrequency}) --> {postingsList.toString()}\n")
 
-        print(f"Indexer contents have been stored at {MY_FILE}\n")
+        print(f"Index contents have been stored at {MY_FILE}\n")
 
     def display(self):
         vocabulary = self.getDictionary().getVocabulary()
@@ -199,10 +179,8 @@ class InvertedIndex:
     
     def run(self):
         self.chooseStrategy() #Choose whether you want to populate index using BSBI or SPIMI
-        self.chooseRankingAbility() #Choose whether you want retreived documents to be displayed in numerical order or based on relevance with respect to the corresponding query.
-        print()
-        
         self.setCapacity(10000) 
+        print()
         
         start = time.perf_counter()
         self.populate()

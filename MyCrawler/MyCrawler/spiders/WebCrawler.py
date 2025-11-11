@@ -33,10 +33,10 @@ class WebCrawler(CrawlSpider):
         Rule(LinkExtractor(allow=(r"\/document_subtype/$",)))
     )
     
-    def __init__(self, indexer, *args, **kwargs):
+    def __init__(self, index, *args, **kwargs):
         super().__init__(*args, **kwargs)
         
-        self.indexer = indexer
+        self.index = index
         
         self.downloadsDir = os.path.join(os.getcwd(), "Downloads")
         if os.path.exists(self.downloadsDir) and os.path.isdir(self.downloadsDir):
@@ -50,7 +50,7 @@ class WebCrawler(CrawlSpider):
         print()
         print()
         print()
-        curDocID = self.indexer.getNumOfDocumentsCollected() + 1
+        curDocID = self.index.getNumOfDocumentsCollected() + 1
         print(f"Limit: {self.pdfLimit}")
         print(f"cur docID: {curDocID}")
 
@@ -60,9 +60,9 @@ class WebCrawler(CrawlSpider):
             self.logger.info(f"PDF limit ({self.pdfLimit}) reached. Stopping crawl.")
             self.crawler.engine.close_spider(self, reason="pdf_limit_reached")
             return
-        elif self.indexer.hasReachedFullCapacity():
-            self.logger.info(f"Indexer capacity ({self.indexer.getCapacity()}) reached. Stopping crawl.")
-            self.crawler.engine.close_spider(self, reason="indexer_limit_reached")
+        elif self.index.hasReachedFullCapacity():
+            self.logger.info(f"Index capacity ({self.index.getCapacity()}) reached. Stopping crawl.")
+            self.crawler.engine.close_spider(self, reason="index_limit_reached")
             return
         elif filename in self.downloadedFiles:
             self.logger.info(f"PDF file ({self.pdfLimit}) already reached.")
@@ -99,13 +99,13 @@ class WebCrawler(CrawlSpider):
                 hasTokens = True
                 for token in tokens:
                     file.write(f"{token}. Doc ID: {curDocID}. Pos: {position}\n")
-                    if self.indexer.hasReachedFullCapacity():
+                    if self.index.hasReachedFullCapacity():
                         break
                     else:
-                        self.indexer.add(token, curDocID, position)
+                        self.index.add(token, curDocID, position)
                         position += 1
 
-                if self.indexer.hasReachedFullCapacity():
+                if self.index.hasReachedFullCapacity():
                         break
         
         if hasTokens is False:
@@ -114,6 +114,6 @@ class WebCrawler(CrawlSpider):
             return
         else:
             self.downloadedFiles.add(filename)
-            self.indexer.setNumOfDocumentsCollected(curDocID)
+            self.index.setNumOfDocumentsCollected(curDocID)
             curDocID += 1
             print(f"Saved and indexed file: {pdfPath}")

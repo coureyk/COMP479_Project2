@@ -1,5 +1,4 @@
 from Strategies import *
-from TextProcessor import TextProcessor
 
 from scrapy.crawler import CrawlerProcess
 from scrapy.utils.project import get_project_settings
@@ -145,13 +144,9 @@ class InvertedIndex:
                 print("Invalid strategy entered. Please try again.\n")
 
     def populate(self):
-        projectNum = 2
-        if projectNum == 1:
-            TextProcessor.run(self)
-        elif projectNum == 2:
-            process = CrawlerProcess(get_project_settings())
-            process.crawl(WebCrawler, index = self)
-            process.start()
+        process = CrawlerProcess(get_project_settings())
+        process.crawl(WebCrawler, index = self)
+        process.start()
 
     def sort(self):
         self.strategy.sort(self)

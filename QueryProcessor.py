@@ -4,7 +4,7 @@ from Indexer import *
 class Query:
     def __init__(self, query):
         self.originalQuery = query
-        self.normalizedQuery = Normalization.normalize(Query.tokenize(query))
+        self.normalizedQuery = Normalization.normalize(nltk.word_tokenize(query))
         self.index = InvertedIndex() #Required for determining tf-idf of query terms
 
     def getOriginalQuery(self):
@@ -24,9 +24,6 @@ class Query:
 
     def setIndex(self, index):
         self.dictionary = index
-
-    def tokenize(query):
-        return nltk.word_tokenize(query)
 
         
 class QueryProcessor:
@@ -144,8 +141,6 @@ class QueryProcessor:
             self.setRetrievedDocs(intersectOfTargetPLs)
             if self.getRetrievedDocs() is not None and len(self.getRetrievedDocs()) > 0:
                 allRetrievedDocs.update(self.getRetrievedDocs())
-                print("HELLO")
-                print(allRetrievedDocs)
 
             self.displayResults()
             print()

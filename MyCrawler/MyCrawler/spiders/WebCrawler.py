@@ -11,7 +11,7 @@ class WebCrawler(CrawlSpider):
     start_urls = ["https://spectrum.library.concordia.ca"]
     allowed_domains = ["library.concordia.ca"]
     
-    pdfLimit = 2
+    pdfLimit = 10
 
     pdfPattern = r"\.pdf"
     htmlPattern = r"(\/\d{4})\.(html)$"
@@ -26,7 +26,7 @@ class WebCrawler(CrawlSpider):
     }
 
     rules = (
-        Rule(LinkExtractor(allow=(pdfPattern,), deny_extensions=[], restrict_css='a.ep_document_link'), callback="downloadPDF"),
+        Rule(LinkExtractor(allow=(pdfPattern,), deny_extensions=[]), callback="downloadPDF"),
         Rule(LinkExtractor(allow=(htmlPattern,))),
         Rule(LinkExtractor(allow=(eprintPattern,))),
         Rule(LinkExtractor(allow=(thesisPattern,))),

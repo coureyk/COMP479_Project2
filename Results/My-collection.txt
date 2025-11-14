@@ -1,1 +1,1 @@
-No documents were retrieved during your session.
+Documents retrieved (2): 3, 5

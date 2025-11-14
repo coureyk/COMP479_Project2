@@ -55,6 +55,7 @@ def clusterDocs(index):
             #Write results
             f.write(f"k = {numOfClusters}\n")
             for clusterNum in range(numOfClusters):
+
                 #Get docIDs for the current cluster and ensure they are strings
                 clusterDocIDs = [str(docIDs[j]) for j in range(len(docIDs)) if labels[j] == clusterNum]
 
@@ -72,7 +73,7 @@ def clusterDocs(index):
             f.write("The top 50 vocabulary terms for each cluster ranked by tf/idf:\n\n")
             for i in range(numOfClusters):
                 f.write(f"Cluster {i}:\n")
-                f.write(", ".join(terms[orderCentroids[i, :50]]))  #The top 50 terms
+                f.write(", ".join(terms[orderCentroids[i, :50]]))  #Write the top 50 terms to the file
                 f.write("\n\n")
             f.write("\n")
 

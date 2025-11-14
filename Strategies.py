@@ -23,7 +23,7 @@ class BSBI(Strategy):
     def __init__(self):
         super().__init__("BSBI")
 
-    def add(self, token, posting, dictionary):
+    def add(self, token, postingsList, dictionary):
         pass
 
     def sort(self, index):        

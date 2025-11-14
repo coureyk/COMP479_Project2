@@ -81,6 +81,8 @@ class PorterStemming(NormaliztionTechnique):
         return ps.stem(myString)
 
 class Normalization():
+
+    #Returns None if no tokens are generated. Otherwise, returns a list of tokens.
     def normalize(tokens):
         
         #If a single token is passed, convert to list that contains single token.

@@ -12,7 +12,7 @@ class WebCrawler(CrawlSpider):
     allowed_domains = ["library.concordia.ca"]
     
     pdfPattern = r"\.pdf"
-    htmlPattern = r"(\/2\d2\d)\.(html)$" #matches with 2x1x.html (i.e. 2010+.html)
+    htmlPattern = r"(\/2\d2\d)\.(html)$" #Matches with 2x1x.html (i.e. 2010+.html)
     eprintPattern = r"id\/eprint"
     thesisPattern = r"\/thesis[^\/]*\/$"
 
@@ -20,7 +20,7 @@ class WebCrawler(CrawlSpider):
         "DOWNLOAD_DELAY": 1,
         "CONCURRENT_REQUESTS": 1,
         "CONCURRENT_REQUESTS_PER_DOMAIN": 1,
-        "ROBOTSTXT_OBEY": True,  # Spectrum has a robots.txt; respect it.
+        "ROBOTSTXT_OBEY": True,  #Respects robots.txt rules within Spectrum's domain.
     }
 
     rules = (
@@ -67,7 +67,7 @@ class WebCrawler(CrawlSpider):
             self.logger.info(f"PDF file ({self.pdfLimit}) already reached.")
             return
                 
-        # Save the PDF file
+        #Save the PDF file
         PDF_PATH = os.path.join(self.DOWNLOADS_DIR, filename)
         with open(PDF_PATH, "wb") as f:
             f.write(response.body)
@@ -75,8 +75,8 @@ class WebCrawler(CrawlSpider):
         #Feed text one token at a time to the inverted index
         hasTokens = False
         reader = PdfReader(PDF_PATH)
-        logInfoPath = os.path.join(self.DOWNLOADS_DIR, f"logInfo{curDocID}.txt")
-        with open(logInfoPath, 'w', encoding = "utf-8") as file:
+        DOC_INFO_PATH = os.path.join(self.DOWNLOADS_DIR, f"doc{curDocID}.txt")
+        with open(DOC_INFO_PATH, 'w', encoding = "utf-8") as file:
             position = 1
             for i in range(len(reader.pages)):
                 page = reader.pages[i]

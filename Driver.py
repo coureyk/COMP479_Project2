@@ -67,7 +67,6 @@ def clusterDocs(index):
             f.write("\n")
 
             #See which terms are most characteristic of each cluster
-            orderCentroids = kmeans.cluster_centers_.argsort()[:, ::-1]
             terms = np.array(terms)
             
             """

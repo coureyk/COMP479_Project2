@@ -1,11 +1,11 @@
 k = 2
-Cluster 0: 2, 3, 4
-Cluster 1: 1, 5
+Cluster 0: 1
+Cluster 1: 2
 
 Cluster 0:
-): 0.3891, (: 0.3838, ]: 0.1486, [: 0.1486, =: 0.1392, :: 0.0994, method: 0.0958, +: 0.0796, sludg: 0.0741, use: 0.0679, point: 0.0676, deform: 0.0669, model: 0.0649, adsorb: 0.0641, mass: 0.0622, al: 0.0614, et: 0.0590, energi: 0.0589, constraint: 0.0581, carbon: 0.0577, activ: 0.0575, stick: 0.0532, boson: 0.0532, templat: 0.0502, surfac: 0.0483, '': 0.0474, adsorpt: 0.0471, result: 0.0466, ``: 0.0451, system: 0.0447, two: 0.0445, elast: 0.0440, mg: 0.0415, higg: 0.0400, wastewat: 0.0395, m.: 0.0394, diﬀer: 0.0387, %: 0.0387, −: 0.0386, l-1: 0.0382, curv: 0.0372, hockey: 0.0366, shot: 0.0363, →: 0.0362, r: 0.0360, tev: 0.0351, l: 0.0350, gaug: 0.0349, figur: 0.0341, wwtp: 0.0341
+deposit: 0.2934, access: 0.2922, open: 0.2505, member: 0.2347, faculti: 0.2087, requir: 0.2087, work: 0.2087, academ: 0.1760, creativ: 0.1760, concordia: 0.1670, univers: 0.1670, freeli: 0.1252, spectrum: 0.1252, research: 0.1252, ;: 0.1252, librarian: 0.1173, peer-review: 0.1173, journal: 0.1173, permiss: 0.1173, dissemin: 0.1173, publish: 0.1173, refere: 0.1173, repositori: 0.1173, senat: 0.1173, fund: 0.1173, output: 0.0835, case: 0.0835, canada: 0.0835, preserv: 0.0835, along: 0.0835, -: 0.0835, copi: 0.0835, electron: 0.0835, respons: 0.0835, right: 0.0835, appear: 0.0835, wherea: 0.0835, without: 0.0835, elsewher: 0.0587, holder: 0.0587, articl: 0.0587, internet: 0.0587, assist: 0.0587, opt: 0.0587, establish: 0.0587, bind: 0.0587, exemplifi: 0.0587, recommend: 0.0587, non-exclus: 0.0587, nonexclus: 0.0587
 
 Cluster 1:
-deposit: 0.1791, ): 0.1680, (: 0.1596, chines: 0.1564, china: 0.1440, open: 0.1398, access: 0.1220, member: 0.1188, film: 0.1186, peopl: 0.1030, faculti: 0.1013, work: 0.0990, ’: 0.0899, creativ: 0.0872, requir: 0.0869, social: 0.0868, freeli: 0.0867, ;: 0.0841, jia: 0.0809, worker: 0.0743, academ: 0.0724, ccp: 0.0723, univers: 0.0720, spectrum: 0.0720, dissemin: 0.0717, peer-review: 0.0717, refere: 0.0717, librarian: 0.0717, repositori: 0.0717, senat: 0.0717, concordia: 0.0689, research: 0.0612, world: 0.0594, fund: 0.0589, platform: 0.0586, permiss: 0.0583, copi: 0.0578, articl: 0.0557, polici: 0.0554, sanm: 0.0547, cultur: 0.0547, publish: 0.0541, life: 0.0532, migrant: 0.0528, polit: 0.0521, :: 0.0500, natur: 0.0497, -: 0.0495, “: 0.0485, wherea: 0.0480
+(: 0.4762, ): 0.4760, ]: 0.3322, [: 0.3322, =: 0.1970, mass: 0.1839, +: 0.1283, boson: 0.1081, model: 0.0996, r: 0.0960, →: 0.0887, −: 0.0846, l: 0.0813, higg: 0.0813, tev: 0.0714, gaug: 0.0709, paramet: 0.0591, gev: 0.0577, section: 0.0547, u: 0.0528, constraint: 0.0523, lsp: 0.0517, scenario: 0.0512, neutralino: 0.0509, left: 0.0509, β: 0.0490, phi: 0.0482, z′: 0.0479, v: 0.0473, bound: 0.0471, :: 0.0465, solut: 0.0454, panel: 0.0438, limit: 0.0438, ckm: 0.0432, mix: 0.0430, one: 0.0424, decay: 0.0419, valu: 0.0419, %: 0.0419, dark: 0.0408, cross: 0.0400, right: 0.0391, matter: 0.0383, densiti: 0.0375, relic: 0.0372, lhc: 0.0361, field: 0.0361, symmetri: 0.0361, sm: 0.0358
 
-Error: Cannot perform k-means clustering when k > total documents collected. (k = 10; Total Documents Collected = 5)
+Error: Cannot perform k-means clustering when k > total documents collected. (k = 10; Total Documents Collected = 2)

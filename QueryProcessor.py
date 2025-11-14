@@ -165,3 +165,5 @@ class QueryProcessor:
                 f.write("No documents were retrieved during your session.")
             else:
                 f.write(f"Documents retrieved ({len(sortedDocs)}): {", ".join(f"{docID}" for docID in allRetrievedDocs)}")
+
+        print(f"Retreived Documents saved: {MY_COLLECTION}")

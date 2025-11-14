@@ -29,11 +29,10 @@ def clusterDocs(index):
     tfidfMatrix = tfidf.fit_transform(dtmDF.values)
     
     #Cluster Using K-Means
-    resultsDir = os.path.join(os.getcwd(), "Results")
-    clusterInfoPath = os.path.join(resultsDir, "clusterInfo.txt")
+    CLUSTER_INFO_PATH = os.path.join(os.getcwd(), "Results", "clusterInfo.txt")
     numOfClusters = 0
     
-    with open(clusterInfoPath, 'w', encoding = "utf-8") as f:
+    with open(CLUSTER_INFO_PATH, 'w', encoding = "utf-8") as f:
         for i in range(3):
             match i:
                 case 0:
@@ -73,9 +72,11 @@ def clusterDocs(index):
             f.write("The top 50 vocabulary terms for each cluster ranked by tf/idf:\n\n")
             for i in range(numOfClusters):
                 f.write(f"Cluster {i}:\n")
-                f.write(", ".join(terms[orderCentroids[i, :50]]))  # top 50 terms
+                f.write(", ".join(terms[orderCentroids[i, :50]]))  #The top 50 terms
                 f.write("\n\n")
             f.write("\n")
+
+    print(f"Clustering Results saved: {CLUSTER_INFO_PATH}")
 
 def main():    
     index = InvertedIndex()
@@ -85,6 +86,8 @@ def main():
     qp.run(index)
 
     clusterDocs(index)
+
+    print("Thank you for using my Inverted Index program!\n")
 
 if __name__ == "__main__":
     main()

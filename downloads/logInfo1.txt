@@ -1,307 +1,307 @@
-Concordia. Doc ID: 1. Pos: 1
-University. Doc ID: 1. Pos: 2
-Senate. Doc ID: 1. Pos: 3
-Resolution. Doc ID: 1. Pos: 4
-on. Doc ID: 1. Pos: 5
-Open. Doc ID: 1. Pos: 6
-Access. Doc ID: 1. Pos: 7
-(. Doc ID: 1. Pos: 8
-Approved. Doc ID: 1. Pos: 9
-April. Doc ID: 1. Pos: 10
-16. Doc ID: 1. Pos: 11
-,. Doc ID: 1. Pos: 12
-2010. Doc ID: 1. Pos: 13
-). Doc ID: 1. Pos: 14
-Whereas. Doc ID: 1. Pos: 15
-Open. Doc ID: 1. Pos: 16
-access. Doc ID: 1. Pos: 17
-makes. Doc ID: 1. Pos: 18
-the. Doc ID: 1. Pos: 19
-results. Doc ID: 1. Pos: 20
-of. Doc ID: 1. Pos: 21
-publicly. Doc ID: 1. Pos: 22
-funded. Doc ID: 1. Pos: 23
-academic. Doc ID: 1. Pos: 24
-research. Doc ID: 1. Pos: 25
-and. Doc ID: 1. Pos: 26
-creative. Doc ID: 1. Pos: 27
-work. Doc ID: 1. Pos: 28
-accessible. Doc ID: 1. Pos: 29
-to. Doc ID: 1. Pos: 30
-everyone. Doc ID: 1. Pos: 31
-via. Doc ID: 1. Pos: 32
-the. Doc ID: 1. Pos: 33
-internet. Doc ID: 1. Pos: 34
-and. Doc ID: 1. Pos: 35
-succeeds. Doc ID: 1. Pos: 36
-by. Doc ID: 1. Pos: 37
-supplementing. Doc ID: 1. Pos: 38
-but. Doc ID: 1. Pos: 39
-not. Doc ID: 1. Pos: 40
-replacing. Doc ID: 1. Pos: 41
-peer-reviewed. Doc ID: 1. Pos: 42
-journals. Doc ID: 1. Pos: 43
-and. Doc ID: 1. Pos: 44
-other. Doc ID: 1. Pos: 45
-established. Doc ID: 1. Pos: 46
-publishing. Doc ID: 1. Pos: 47
-venues. Doc ID: 1. Pos: 48
-,. Doc ID: 1. Pos: 49
-and. Doc ID: 1. Pos: 50
-whereas. Doc ID: 1. Pos: 51
-Concordia. Doc ID: 1. Pos: 52
-University. Doc ID: 1. Pos: 53
-wishes. Doc ID: 1. Pos: 54
-to. Doc ID: 1. Pos: 55
-take. Doc ID: 1. Pos: 56
-a. Doc ID: 1. Pos: 57
-leadership. Doc ID: 1. Pos: 58
-role. Doc ID: 1. Pos: 59
-in. Doc ID: 1. Pos: 60
-Canada. Doc ID: 1. Pos: 61
-and. Doc ID: 1. Pos: 62
-exemplify. Doc ID: 1. Pos: 63
-social. Doc ID: 1. Pos: 64
-responsibility. Doc ID: 1. Pos: 65
-by. Doc ID: 1. Pos: 66
-supporting. Doc ID: 1. Pos: 67
-the. Doc ID: 1. Pos: 68
-principles. Doc ID: 1. Pos: 69
-of. Doc ID: 1. Pos: 70
-open. Doc ID: 1. Pos: 71
-access. Doc ID: 1. Pos: 72
-and. Doc ID: 1. Pos: 73
-has. Doc ID: 1. Pos: 74
-recently. Doc ID: 1. Pos: 75
-launched. Doc ID: 1. Pos: 76
-Spectrum. Doc ID: 1. Pos: 77
-,. Doc ID: 1. Pos: 78
-an. Doc ID: 1. Pos: 79
-open. Doc ID: 1. Pos: 80
-access. Doc ID: 1. Pos: 81
-repository. Doc ID: 1. Pos: 82
-freely. Doc ID: 1. Pos: 83
-available. Doc ID: 1. Pos: 84
-to. Doc ID: 1. Pos: 85
-receive. Doc ID: 1. Pos: 86
-the. Doc ID: 1. Pos: 87
-refereed. Doc ID: 1. Pos: 88
-academic. Doc ID: 1. Pos: 89
-research. Doc ID: 1. Pos: 90
-output. Doc ID: 1. Pos: 91
-and. Doc ID: 1. Pos: 92
-creative. Doc ID: 1. Pos: 93
-work. Doc ID: 1. Pos: 94
-voluntarily. Doc ID: 1. Pos: 95
-deposited. Doc ID: 1. Pos: 96
-by. Doc ID: 1. Pos: 97
-Concordia. Doc ID: 1. Pos: 98
-faculty. Doc ID: 1. Pos: 99
-and. Doc ID: 1. Pos: 100
-others. Doc ID: 1. Pos: 101
-,. Doc ID: 1. Pos: 102
-with. Doc ID: 1. Pos: 103
-assistance. Doc ID: 1. Pos: 104
-from. Doc ID: 1. Pos: 105
-librarians. Doc ID: 1. Pos: 106
-and. Doc ID: 1. Pos: 107
-other. Doc ID: 1. Pos: 108
-library. Doc ID: 1. Pos: 109
-staff. Doc ID: 1. Pos: 110
-as. Doc ID: 1. Pos: 111
-required. Doc ID: 1. Pos: 112
-,. Doc ID: 1. Pos: 113
-thereby. Doc ID: 1. Pos: 114
-satisfying. Doc ID: 1. Pos: 115
-the. Doc ID: 1. Pos: 116
-requirements. Doc ID: 1. Pos: 117
-of. Doc ID: 1. Pos: 118
-a. Doc ID: 1. Pos: 119
-number. Doc ID: 1. Pos: 120
-of. Doc ID: 1. Pos: 121
-funding. Doc ID: 1. Pos: 122
-agencies. Doc ID: 1. Pos: 123
-in. Doc ID: 1. Pos: 124
-Canada. Doc ID: 1. Pos: 125
-and. Doc ID: 1. Pos: 126
-elsewhere. Doc ID: 1. Pos: 127
-without. Doc ID: 1. Pos: 128
-affecting. Doc ID: 1. Pos: 129
-the. Doc ID: 1. Pos: 130
-intellectual. Doc ID: 1. Pos: 131
-property. Doc ID: 1. Pos: 132
-rights. Doc ID: 1. Pos: 133
-,. Doc ID: 1. Pos: 134
-responsibilities. Doc ID: 1. Pos: 135
-and. Doc ID: 1. Pos: 136
-academic. Doc ID: 1. Pos: 137
-freedom. Doc ID: 1. Pos: 138
-of. Doc ID: 1. Pos: 139
-faculty. Doc ID: 1. Pos: 140
-members. Doc ID: 1. Pos: 141
-;. Doc ID: 1. Pos: 142
-It. Doc ID: 1. Pos: 143
-was. Doc ID: 1. Pos: 144
-resolved. Doc ID: 1. Pos: 145
-that. Doc ID: 1. Pos: 146
-Senate. Doc ID: 1. Pos: 147
-recommends. Doc ID: 1. Pos: 148
-that. Doc ID: 1. Pos: 149
-Concordia. Doc ID: 1. Pos: 150
-University. Doc ID: 1. Pos: 151
-:. Doc ID: 1. Pos: 152
--. Doc ID: 1. Pos: 153
-from. Doc ID: 1. Pos: 154
-now. Doc ID: 1. Pos: 155
-on. Doc ID: 1. Pos: 156
-encourages. Doc ID: 1. Pos: 157
-all. Doc ID: 1. Pos: 158
-its. Doc ID: 1. Pos: 159
-faculty. Doc ID: 1. Pos: 160
-members. Doc ID: 1. Pos: 161
-to. Doc ID: 1. Pos: 162
-deposit. Doc ID: 1. Pos: 163
-an. Doc ID: 1. Pos: 164
-electronic. Doc ID: 1. Pos: 165
-copy. Doc ID: 1. Pos: 166
-of. Doc ID: 1. Pos: 167
-their. Doc ID: 1. Pos: 168
-refereed. Doc ID: 1. Pos: 169
-research. Doc ID: 1. Pos: 170
-output. Doc ID: 1. Pos: 171
-and. Doc ID: 1. Pos: 172
-creative. Doc ID: 1. Pos: 173
-work. Doc ID: 1. Pos: 174
-in. Doc ID: 1. Pos: 175
-Spectrum. Doc ID: 1. Pos: 176
-,. Doc ID: 1. Pos: 177
-along. Doc ID: 1. Pos: 178
-with. Doc ID: 1. Pos: 179
-nonexclusive. Doc ID: 1. Pos: 180
-permission. Doc ID: 1. Pos: 181
-to. Doc ID: 1. Pos: 182
-preserve. Doc ID: 1. Pos: 183
-and. Doc ID: 1. Pos: 184
-freely. Doc ID: 1. Pos: 185
-disseminate. Doc ID: 1. Pos: 186
-it. Doc ID: 1. Pos: 187
-;. Doc ID: 1. Pos: 188
-and. Doc ID: 1. Pos: 189
--. Doc ID: 1. Pos: 190
-furthermore. Doc ID: 1. Pos: 191
-,. Doc ID: 1. Pos: 192
-in. Doc ID: 1. Pos: 193
-the. Doc ID: 1. Pos: 194
-specific. Doc ID: 1. Pos: 195
-case. Doc ID: 1. Pos: 196
-of. Doc ID: 1. Pos: 197
-any. Doc ID: 1. Pos: 198
-scholarly. Doc ID: 1. Pos: 199
-article. Doc ID: 1. Pos: 200
-accepted. Doc ID: 1. Pos: 201
-for. Doc ID: 1. Pos: 202
-publication. Doc ID: 1. Pos: 203
-in. Doc ID: 1. Pos: 204
-a. Doc ID: 1. Pos: 205
-peer-reviewed. Doc ID: 1. Pos: 206
-journal. Doc ID: 1. Pos: 207
-,. Doc ID: 1. Pos: 208
-from. Doc ID: 1. Pos: 209
-now. Doc ID: 1. Pos: 210
-on. Doc ID: 1. Pos: 211
-requires. Doc ID: 1. Pos: 212
-all. Doc ID: 1. Pos: 213
-faculty. Doc ID: 1. Pos: 214
-members. Doc ID: 1. Pos: 215
-to. Doc ID: 1. Pos: 216
-deposit. Doc ID: 1. Pos: 217
-an. Doc ID: 1. Pos: 218
-electronic. Doc ID: 1. Pos: 219
-copy. Doc ID: 1. Pos: 220
-in. Doc ID: 1. Pos: 221
-Spectrum. Doc ID: 1. Pos: 222
-along. Doc ID: 1. Pos: 223
-with. Doc ID: 1. Pos: 224
-non-exclusive. Doc ID: 1. Pos: 225
-permission. Doc ID: 1. Pos: 226
-to. Doc ID: 1. Pos: 227
-preserve. Doc ID: 1. Pos: 228
-and. Doc ID: 1. Pos: 229
-freely. Doc ID: 1. Pos: 230
-disseminate. Doc ID: 1. Pos: 231
-it. Doc ID: 1. Pos: 232
-.. Doc ID: 1. Pos: 233
-This. Doc ID: 1. Pos: 234
-requirement. Doc ID: 1. Pos: 235
-is. Doc ID: 1. Pos: 236
-not. Doc ID: 1. Pos: 237
-binding. Doc ID: 1. Pos: 238
-in. Doc ID: 1. Pos: 239
-cases. Doc ID: 1. Pos: 240
-where. Doc ID: 1. Pos: 241
-publishers. Doc ID: 1. Pos: 242
-,. Doc ID: 1. Pos: 243
-co-authors. Doc ID: 1. Pos: 244
-or. Doc ID: 1. Pos: 245
-other. Doc ID: 1. Pos: 246
-rights. Doc ID: 1. Pos: 247
-holders. Doc ID: 1. Pos: 248
-disallow. Doc ID: 1. Pos: 249
-such. Doc ID: 1. Pos: 250
-a. Doc ID: 1. Pos: 251
-deposit. Doc ID: 1. Pos: 252
-.. Doc ID: 1. Pos: 253
-Faculty. Doc ID: 1. Pos: 254
-members. Doc ID: 1. Pos: 255
-may. Doc ID: 1. Pos: 256
-also. Doc ID: 1. Pos: 257
-,. Doc ID: 1. Pos: 258
-without. Doc ID: 1. Pos: 259
-prejudice. Doc ID: 1. Pos: 260
-,. Doc ID: 1. Pos: 261
-opt. Doc ID: 1. Pos: 262
-out. Doc ID: 1. Pos: 263
-of. Doc ID: 1. Pos: 264
-the. Doc ID: 1. Pos: 265
-requirement. Doc ID: 1. Pos: 266
-by. Doc ID: 1. Pos: 267
-notifying. Doc ID: 1. Pos: 268
-the. Doc ID: 1. Pos: 269
-University. Doc ID: 1. Pos: 270
-Librarian. Doc ID: 1. Pos: 271
-in. Doc ID: 1. Pos: 272
-writing. Doc ID: 1. Pos: 273
-that. Doc ID: 1. Pos: 274
-their. Doc ID: 1. Pos: 275
-work. Doc ID: 1. Pos: 276
-has. Doc ID: 1. Pos: 277
-appeared. Doc ID: 1. Pos: 278
-,. Doc ID: 1. Pos: 279
-or. Doc ID: 1. Pos: 280
-will. Doc ID: 1. Pos: 281
-appear. Doc ID: 1. Pos: 282
-in. Doc ID: 1. Pos: 283
-another. Doc ID: 1. Pos: 284
-Open. Doc ID: 1. Pos: 285
-Access. Doc ID: 1. Pos: 286
-format. Doc ID: 1. Pos: 287
-;. Doc ID: 1. Pos: 288
-or. Doc ID: 1. Pos: 289
-by. Doc ID: 1. Pos: 290
-citing. Doc ID: 1. Pos: 291
-other. Doc ID: 1. Pos: 292
-factors. Doc ID: 1. Pos: 293
-that. Doc ID: 1. Pos: 294
-currently. Doc ID: 1. Pos: 295
-discourage. Doc ID: 1. Pos: 296
-them. Doc ID: 1. Pos: 297
-from. Doc ID: 1. Pos: 298
-depositing. Doc ID: 1. Pos: 299
-their. Doc ID: 1. Pos: 300
-work. Doc ID: 1. Pos: 301
-in. Doc ID: 1. Pos: 302
-an. Doc ID: 1. Pos: 303
-Open. Doc ID: 1. Pos: 304
-Access. Doc ID: 1. Pos: 305
-repository. Doc ID: 1. Pos: 306
-.. Doc ID: 1. Pos: 307
+Concordia / Doc ID: 1 / Pos: 1
+University / Doc ID: 1 / Pos: 2
+Senate / Doc ID: 1 / Pos: 3
+Resolution / Doc ID: 1 / Pos: 4
+on / Doc ID: 1 / Pos: 5
+Open / Doc ID: 1 / Pos: 6
+Access / Doc ID: 1 / Pos: 7
+( / Doc ID: 1 / Pos: 8
+Approved / Doc ID: 1 / Pos: 9
+April / Doc ID: 1 / Pos: 10
+16 / Doc ID: 1 / Pos: 11
+, / Doc ID: 1 / Pos: 12
+2010 / Doc ID: 1 / Pos: 13
+) / Doc ID: 1 / Pos: 14
+Whereas / Doc ID: 1 / Pos: 15
+Open / Doc ID: 1 / Pos: 16
+access / Doc ID: 1 / Pos: 17
+makes / Doc ID: 1 / Pos: 18
+the / Doc ID: 1 / Pos: 19
+results / Doc ID: 1 / Pos: 20
+of / Doc ID: 1 / Pos: 21
+publicly / Doc ID: 1 / Pos: 22
+funded / Doc ID: 1 / Pos: 23
+academic / Doc ID: 1 / Pos: 24
+research / Doc ID: 1 / Pos: 25
+and / Doc ID: 1 / Pos: 26
+creative / Doc ID: 1 / Pos: 27
+work / Doc ID: 1 / Pos: 28
+accessible / Doc ID: 1 / Pos: 29
+to / Doc ID: 1 / Pos: 30
+everyone / Doc ID: 1 / Pos: 31
+via / Doc ID: 1 / Pos: 32
+the / Doc ID: 1 / Pos: 33
+internet / Doc ID: 1 / Pos: 34
+and / Doc ID: 1 / Pos: 35
+succeeds / Doc ID: 1 / Pos: 36
+by / Doc ID: 1 / Pos: 37
+supplementing / Doc ID: 1 / Pos: 38
+but / Doc ID: 1 / Pos: 39
+not / Doc ID: 1 / Pos: 40
+replacing / Doc ID: 1 / Pos: 41
+peer-reviewed / Doc ID: 1 / Pos: 42
+journals / Doc ID: 1 / Pos: 43
+and / Doc ID: 1 / Pos: 44
+other / Doc ID: 1 / Pos: 45
+established / Doc ID: 1 / Pos: 46
+publishing / Doc ID: 1 / Pos: 47
+venues / Doc ID: 1 / Pos: 48
+, / Doc ID: 1 / Pos: 49
+and / Doc ID: 1 / Pos: 50
+whereas / Doc ID: 1 / Pos: 51
+Concordia / Doc ID: 1 / Pos: 52
+University / Doc ID: 1 / Pos: 53
+wishes / Doc ID: 1 / Pos: 54
+to / Doc ID: 1 / Pos: 55
+take / Doc ID: 1 / Pos: 56
+a / Doc ID: 1 / Pos: 57
+leadership / Doc ID: 1 / Pos: 58
+role / Doc ID: 1 / Pos: 59
+in / Doc ID: 1 / Pos: 60
+Canada / Doc ID: 1 / Pos: 61
+and / Doc ID: 1 / Pos: 62
+exemplify / Doc ID: 1 / Pos: 63
+social / Doc ID: 1 / Pos: 64
+responsibility / Doc ID: 1 / Pos: 65
+by / Doc ID: 1 / Pos: 66
+supporting / Doc ID: 1 / Pos: 67
+the / Doc ID: 1 / Pos: 68
+principles / Doc ID: 1 / Pos: 69
+of / Doc ID: 1 / Pos: 70
+open / Doc ID: 1 / Pos: 71
+access / Doc ID: 1 / Pos: 72
+and / Doc ID: 1 / Pos: 73
+has / Doc ID: 1 / Pos: 74
+recently / Doc ID: 1 / Pos: 75
+launched / Doc ID: 1 / Pos: 76
+Spectrum / Doc ID: 1 / Pos: 77
+, / Doc ID: 1 / Pos: 78
+an / Doc ID: 1 / Pos: 79
+open / Doc ID: 1 / Pos: 80
+access / Doc ID: 1 / Pos: 81
+repository / Doc ID: 1 / Pos: 82
+freely / Doc ID: 1 / Pos: 83
+available / Doc ID: 1 / Pos: 84
+to / Doc ID: 1 / Pos: 85
+receive / Doc ID: 1 / Pos: 86
+the / Doc ID: 1 / Pos: 87
+refereed / Doc ID: 1 / Pos: 88
+academic / Doc ID: 1 / Pos: 89
+research / Doc ID: 1 / Pos: 90
+output / Doc ID: 1 / Pos: 91
+and / Doc ID: 1 / Pos: 92
+creative / Doc ID: 1 / Pos: 93
+work / Doc ID: 1 / Pos: 94
+voluntarily / Doc ID: 1 / Pos: 95
+deposited / Doc ID: 1 / Pos: 96
+by / Doc ID: 1 / Pos: 97
+Concordia / Doc ID: 1 / Pos: 98
+faculty / Doc ID: 1 / Pos: 99
+and / Doc ID: 1 / Pos: 100
+others / Doc ID: 1 / Pos: 101
+, / Doc ID: 1 / Pos: 102
+with / Doc ID: 1 / Pos: 103
+assistance / Doc ID: 1 / Pos: 104
+from / Doc ID: 1 / Pos: 105
+librarians / Doc ID: 1 / Pos: 106
+and / Doc ID: 1 / Pos: 107
+other / Doc ID: 1 / Pos: 108
+library / Doc ID: 1 / Pos: 109
+staff / Doc ID: 1 / Pos: 110
+as / Doc ID: 1 / Pos: 111
+required / Doc ID: 1 / Pos: 112
+, / Doc ID: 1 / Pos: 113
+thereby / Doc ID: 1 / Pos: 114
+satisfying / Doc ID: 1 / Pos: 115
+the / Doc ID: 1 / Pos: 116
+requirements / Doc ID: 1 / Pos: 117
+of / Doc ID: 1 / Pos: 118
+a / Doc ID: 1 / Pos: 119
+number / Doc ID: 1 / Pos: 120
+of / Doc ID: 1 / Pos: 121
+funding / Doc ID: 1 / Pos: 122
+agencies / Doc ID: 1 / Pos: 123
+in / Doc ID: 1 / Pos: 124
+Canada / Doc ID: 1 / Pos: 125
+and / Doc ID: 1 / Pos: 126
+elsewhere / Doc ID: 1 / Pos: 127
+without / Doc ID: 1 / Pos: 128
+affecting / Doc ID: 1 / Pos: 129
+the / Doc ID: 1 / Pos: 130
+intellectual / Doc ID: 1 / Pos: 131
+property / Doc ID: 1 / Pos: 132
+rights / Doc ID: 1 / Pos: 133
+, / Doc ID: 1 / Pos: 134
+responsibilities / Doc ID: 1 / Pos: 135
+and / Doc ID: 1 / Pos: 136
+academic / Doc ID: 1 / Pos: 137
+freedom / Doc ID: 1 / Pos: 138
+of / Doc ID: 1 / Pos: 139
+faculty / Doc ID: 1 / Pos: 140
+members / Doc ID: 1 / Pos: 141
+; / Doc ID: 1 / Pos: 142
+It / Doc ID: 1 / Pos: 143
+was / Doc ID: 1 / Pos: 144
+resolved / Doc ID: 1 / Pos: 145
+that / Doc ID: 1 / Pos: 146
+Senate / Doc ID: 1 / Pos: 147
+recommends / Doc ID: 1 / Pos: 148
+that / Doc ID: 1 / Pos: 149
+Concordia / Doc ID: 1 / Pos: 150
+University / Doc ID: 1 / Pos: 151
+: / Doc ID: 1 / Pos: 152
+- / Doc ID: 1 / Pos: 153
+from / Doc ID: 1 / Pos: 154
+now / Doc ID: 1 / Pos: 155
+on / Doc ID: 1 / Pos: 156
+encourages / Doc ID: 1 / Pos: 157
+all / Doc ID: 1 / Pos: 158
+its / Doc ID: 1 / Pos: 159
+faculty / Doc ID: 1 / Pos: 160
+members / Doc ID: 1 / Pos: 161
+to / Doc ID: 1 / Pos: 162
+deposit / Doc ID: 1 / Pos: 163
+an / Doc ID: 1 / Pos: 164
+electronic / Doc ID: 1 / Pos: 165
+copy / Doc ID: 1 / Pos: 166
+of / Doc ID: 1 / Pos: 167
+their / Doc ID: 1 / Pos: 168
+refereed / Doc ID: 1 / Pos: 169
+research / Doc ID: 1 / Pos: 170
+output / Doc ID: 1 / Pos: 171
+and / Doc ID: 1 / Pos: 172
+creative / Doc ID: 1 / Pos: 173
+work / Doc ID: 1 / Pos: 174
+in / Doc ID: 1 / Pos: 175
+Spectrum / Doc ID: 1 / Pos: 176
+, / Doc ID: 1 / Pos: 177
+along / Doc ID: 1 / Pos: 178
+with / Doc ID: 1 / Pos: 179
+nonexclusive / Doc ID: 1 / Pos: 180
+permission / Doc ID: 1 / Pos: 181
+to / Doc ID: 1 / Pos: 182
+preserve / Doc ID: 1 / Pos: 183
+and / Doc ID: 1 / Pos: 184
+freely / Doc ID: 1 / Pos: 185
+disseminate / Doc ID: 1 / Pos: 186
+it / Doc ID: 1 / Pos: 187
+; / Doc ID: 1 / Pos: 188
+and / Doc ID: 1 / Pos: 189
+- / Doc ID: 1 / Pos: 190
+furthermore / Doc ID: 1 / Pos: 191
+, / Doc ID: 1 / Pos: 192
+in / Doc ID: 1 / Pos: 193
+the / Doc ID: 1 / Pos: 194
+specific / Doc ID: 1 / Pos: 195
+case / Doc ID: 1 / Pos: 196
+of / Doc ID: 1 / Pos: 197
+any / Doc ID: 1 / Pos: 198
+scholarly / Doc ID: 1 / Pos: 199
+article / Doc ID: 1 / Pos: 200
+accepted / Doc ID: 1 / Pos: 201
+for / Doc ID: 1 / Pos: 202
+publication / Doc ID: 1 / Pos: 203
+in / Doc ID: 1 / Pos: 204
+a / Doc ID: 1 / Pos: 205
+peer-reviewed / Doc ID: 1 / Pos: 206
+journal / Doc ID: 1 / Pos: 207
+, / Doc ID: 1 / Pos: 208
+from / Doc ID: 1 / Pos: 209
+now / Doc ID: 1 / Pos: 210
+on / Doc ID: 1 / Pos: 211
+requires / Doc ID: 1 / Pos: 212
+all / Doc ID: 1 / Pos: 213
+faculty / Doc ID: 1 / Pos: 214
+members / Doc ID: 1 / Pos: 215
+to / Doc ID: 1 / Pos: 216
+deposit / Doc ID: 1 / Pos: 217
+an / Doc ID: 1 / Pos: 218
+electronic / Doc ID: 1 / Pos: 219
+copy / Doc ID: 1 / Pos: 220
+in / Doc ID: 1 / Pos: 221
+Spectrum / Doc ID: 1 / Pos: 222
+along / Doc ID: 1 / Pos: 223
+with / Doc ID: 1 / Pos: 224
+non-exclusive / Doc ID: 1 / Pos: 225
+permission / Doc ID: 1 / Pos: 226
+to / Doc ID: 1 / Pos: 227
+preserve / Doc ID: 1 / Pos: 228
+and / Doc ID: 1 / Pos: 229
+freely / Doc ID: 1 / Pos: 230
+disseminate / Doc ID: 1 / Pos: 231
+it / Doc ID: 1 / Pos: 232
+. / Doc ID: 1 / Pos: 233
+This / Doc ID: 1 / Pos: 234
+requirement / Doc ID: 1 / Pos: 235
+is / Doc ID: 1 / Pos: 236
+not / Doc ID: 1 / Pos: 237
+binding / Doc ID: 1 / Pos: 238
+in / Doc ID: 1 / Pos: 239
+cases / Doc ID: 1 / Pos: 240
+where / Doc ID: 1 / Pos: 241
+publishers / Doc ID: 1 / Pos: 242
+, / Doc ID: 1 / Pos: 243
+co-authors / Doc ID: 1 / Pos: 244
+or / Doc ID: 1 / Pos: 245
+other / Doc ID: 1 / Pos: 246
+rights / Doc ID: 1 / Pos: 247
+holders / Doc ID: 1 / Pos: 248
+disallow / Doc ID: 1 / Pos: 249
+such / Doc ID: 1 / Pos: 250
+a / Doc ID: 1 / Pos: 251
+deposit / Doc ID: 1 / Pos: 252
+. / Doc ID: 1 / Pos: 253
+Faculty / Doc ID: 1 / Pos: 254
+members / Doc ID: 1 / Pos: 255
+may / Doc ID: 1 / Pos: 256
+also / Doc ID: 1 / Pos: 257
+, / Doc ID: 1 / Pos: 258
+without / Doc ID: 1 / Pos: 259
+prejudice / Doc ID: 1 / Pos: 260
+, / Doc ID: 1 / Pos: 261
+opt / Doc ID: 1 / Pos: 262
+out / Doc ID: 1 / Pos: 263
+of / Doc ID: 1 / Pos: 264
+the / Doc ID: 1 / Pos: 265
+requirement / Doc ID: 1 / Pos: 266
+by / Doc ID: 1 / Pos: 267
+notifying / Doc ID: 1 / Pos: 268
+the / Doc ID: 1 / Pos: 269
+University / Doc ID: 1 / Pos: 270
+Librarian / Doc ID: 1 / Pos: 271
+in / Doc ID: 1 / Pos: 272
+writing / Doc ID: 1 / Pos: 273
+that / Doc ID: 1 / Pos: 274
+their / Doc ID: 1 / Pos: 275
+work / Doc ID: 1 / Pos: 276
+has / Doc ID: 1 / Pos: 277
+appeared / Doc ID: 1 / Pos: 278
+, / Doc ID: 1 / Pos: 279
+or / Doc ID: 1 / Pos: 280
+will / Doc ID: 1 / Pos: 281
+appear / Doc ID: 1 / Pos: 282
+in / Doc ID: 1 / Pos: 283
+another / Doc ID: 1 / Pos: 284
+Open / Doc ID: 1 / Pos: 285
+Access / Doc ID: 1 / Pos: 286
+format / Doc ID: 1 / Pos: 287
+; / Doc ID: 1 / Pos: 288
+or / Doc ID: 1 / Pos: 289
+by / Doc ID: 1 / Pos: 290
+citing / Doc ID: 1 / Pos: 291
+other / Doc ID: 1 / Pos: 292
+factors / Doc ID: 1 / Pos: 293
+that / Doc ID: 1 / Pos: 294
+currently / Doc ID: 1 / Pos: 295
+discourage / Doc ID: 1 / Pos: 296
+them / Doc ID: 1 / Pos: 297
+from / Doc ID: 1 / Pos: 298
+depositing / Doc ID: 1 / Pos: 299
+their / Doc ID: 1 / Pos: 300
+work / Doc ID: 1 / Pos: 301
+in / Doc ID: 1 / Pos: 302
+an / Doc ID: 1 / Pos: 303
+Open / Doc ID: 1 / Pos: 304
+Access / Doc ID: 1 / Pos: 305
+repository / Doc ID: 1 / Pos: 306
+. / Doc ID: 1 / Pos: 307

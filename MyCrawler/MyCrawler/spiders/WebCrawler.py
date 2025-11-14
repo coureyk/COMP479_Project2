@@ -11,8 +11,6 @@ class WebCrawler(CrawlSpider):
     start_urls = ["https://spectrum.library.concordia.ca"]
     allowed_domains = ["library.concordia.ca"]
     
-    pdfLimit = 25
-
     pdfPattern = r"\.pdf"
     htmlPattern = r"(\/2\d2\d)\.(html)$" #matches with 2x1x.html (i.e. 2010+.html)
     eprintPattern = r"id\/eprint"
@@ -33,16 +31,17 @@ class WebCrawler(CrawlSpider):
         Rule(LinkExtractor(allow=(r"\/document_subtype/$",)))
     )
     
-    def __init__(self, index, *args, **kwargs):
+    def __init__(self, index, pdfLimit, *args, **kwargs):
         super().__init__(*args, **kwargs)
         
         self.index = index
+        self.pdfLimit = pdfLimit
         
-        self.downloadsDir = os.path.join(os.getcwd(), "Downloads")
-        if os.path.exists(self.downloadsDir) and os.path.isdir(self.downloadsDir):
-            shutil.rmtree(self.downloadsDir)
-            print(f"Directory '{self.downloadsDir}' and its contents deleted.")
-        os.makedirs(self.downloadsDir)
+        self.DOWNLOADS_DIR = os.path.join(os.getcwd(), "Downloads")
+        if os.path.exists(self.DOWNLOADS_DIR) and os.path.isdir(self.DOWNLOADS_DIR):
+            shutil.rmtree(self.DOWNLOADS_DIR)
+            print(f"Directory '{self.DOWNLOADS_DIR}' and its contents deleted.")
+        os.makedirs(self.DOWNLOADS_DIR)
 
         self.downloadedFiles = set()
     
@@ -69,14 +68,14 @@ class WebCrawler(CrawlSpider):
             return
                 
         # Save the PDF file
-        pdfPath = os.path.join(self.downloadsDir, filename)
-        with open(pdfPath, "wb") as f:
+        PDF_PATH = os.path.join(self.DOWNLOADS_DIR, filename)
+        with open(PDF_PATH, "wb") as f:
             f.write(response.body)
 
         #Feed text one token at a time to the inverted index
         hasTokens = False
-        reader = PdfReader(pdfPath)
-        logInfoPath = os.path.join(self.downloadsDir, f"logInfo{curDocID}.txt")
+        reader = PdfReader(PDF_PATH)
+        logInfoPath = os.path.join(self.DOWNLOADS_DIR, f"logInfo{curDocID}.txt")
         with open(logInfoPath, 'w', encoding = "utf-8") as file:
             position = 1
             for i in range(len(reader.pages)):
@@ -98,7 +97,7 @@ class WebCrawler(CrawlSpider):
 
                 hasTokens = True
                 for token in tokens:
-                    file.write(f"{token}. Doc ID: {curDocID}. Pos: {position}\n")
+                    file.write(f"{token} / Doc ID: {curDocID} / Pos: {position}\n")
                     if self.index.hasReachedFullCapacity():
                         break
                     else:
@@ -108,16 +107,16 @@ class WebCrawler(CrawlSpider):
                 if self.index.hasReachedFullCapacity():
                         break
         
-        os.remove(pdfPath)
+        os.remove(PDF_PATH)
         if hasTokens is False:
             self.logger.warning(f"No text extracted from any page of '{filename}'. Skipping PDF.")
         else:
             self.downloadedFiles.add(filename)
             self.index.setNumOfDocumentsCollected(curDocID)
 
-            pdfLinkPath = os.path.join(self.downloadsDir, "Links.txt")
-            with open(pdfLinkPath, "a") as f:
+            PDF_LINK_PATH = os.path.join(self.DOWNLOADS_DIR, "Links.txt")
+            with open(PDF_LINK_PATH, "a") as f:
                 f.write(f"{curDocID}) {response.url}\n")
 
-            print(f"File successfully indexed and saved within: {pdfLinkPath}")
+            print(f"File successfully indexed and saved to {PDF_LINK_PATH}")
             curDocID += 1

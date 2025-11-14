@@ -1,1 +1,1 @@
-Documents retrieved (9): 3, 5, 7, 11, 12, 15, 19, 21, 22
+Documents retrieved (3): 3, 5, 7

@@ -145,24 +145,39 @@ class InvertedIndex:
 
     def populate(self):
         process = CrawlerProcess(get_project_settings())
-        process.crawl(WebCrawler, index = self)
+        print()
+        
+        intInput = 1
+        validInput = False
+        while not validInput:
+            userInput = input("Please enter how many documents you would like your Web Crawler to retrieve: ").strip()
+            try:
+                intInput = int(userInput)
+            except Exception as e:
+                print("Invalid entry. Must enter a positive integer value.\n")
+                continue
+
+            if intInput < 1:
+                print("Invalid entry. Must enter a positive integer value.\n")
+            else:
+                validInput = True            
+
+        process.crawl(WebCrawler, index = self, pdfLimit = intInput)
         process.start()
 
     def sort(self):
         self.strategy.sort(self)
 
-    def writeToFile(self, filename):
-        MY_FILE = os.path.join(os.getcwd(), filename)
-        
+    def writeToFile(self, INDEX_CONTENTS_PATH):        
         vocabulary = self.getDictionary().getVocabulary()
-        with open(MY_FILE, "w", encoding = "utf-8") as f:
+        with open(INDEX_CONTENTS_PATH, "w", encoding = "utf-8") as f:
             for term in vocabulary:
                 postingsList = vocabulary[term]
                 docFrequency = postingsList.getSize()
 
                 f.write(f"{term} ({docFrequency}) --> {postingsList.toString()}\n")
 
-        print(f"Index contents have been stored at {MY_FILE}\n")
+        print(f"Inverted Index contents saved: {INDEX_CONTENTS_PATH}\n")
 
     def display(self):
         vocabulary = self.getDictionary().getVocabulary()
@@ -181,12 +196,13 @@ class InvertedIndex:
         self.populate()
         end = time.perf_counter()
         elapsed = end - start
-        print(f"\nPopulating time: {elapsed:.4f} seconds.\n")
+        print(f"\nPopulating time: {elapsed:.4f} seconds.")
         
         start = time.perf_counter()
         self.sort()
         end = time.perf_counter()
         elapsed = end - start
-        print(f"Sorting time: {elapsed:.4f} seconds.\n")
+        print(f"Sorting time: {elapsed:.4f} seconds.")
 
-        self.writeToFile(r"Results\myResults.txt")
+        INDEX_CONTENTS_PATH = os.path.join(os.getcwd(), "Results", "InvertedIndexContents.txt")
+        self.writeToFile(INDEX_CONTENTS_PATH)

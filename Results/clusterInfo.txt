@@ -1,143 +1,59 @@
 k = 2
-Cluster 0: 2, 3, 4, 6, 8, 9, 10, 12, 13, 14, 15, 16, 18, 20, 21, 22, 23, 25
-Cluster 1: 1, 5, 7, 11, 17, 19, 24
+Cluster 0: 4
+Cluster 1: 1, 2, 3, 5, 6, 7, 8, 9, 10
 
 The top 50 vocabulary terms for each cluster ranked by tf/idf:
 
 Cluster 0:
-), (, *, :, [, ], =, ;, use, %, result, model, $, data, -1, method, +, figur, mc, ’, workplac, tabl, valu, wood, simul, investor, rpca, cash, effect, vdp, bond, sheath, ldpc, et, optim, restaur, plywood, design, algorithm, moistur, trajectori, code, ”, log, “, ``, matrix, decod, carbon, firm
+deform, method, ), (, =, templat, energi, stick, :, point, elast, ], [, shot, hockey, constraint, use, diﬀer, curv, system, shape, shell, fem, tetrahedron, discret, +, angl, linear, stiﬀ, bend, 3d, element, reconstruct, , , iter, model, triangl, axi, spring, physics-bas, matrix, mesh, result, ”, two, ﬁnd, ﬁnite, ﬁtting, modulu
 
 Cluster 1:
-), (, student, read, volunt, :, learn, refuge, %, teacher, china, ’, “, deposit, ”, educ, attack, strain, ], [, use, ultrasound, pen, creativ, imag, neighbour, chines, data, domain, school, open, rf, classroom, particip, peopl, cultur, film, social, access, experi, frame, train, differ, displac, work, ;, ccp, pca-glu, faculti, spectrum
+), (, :, =, volunt, ;, ’, ], [, $, china, investor, cultur, app, deposit, chines, ``, *, restaur, open, log, student, neighbour, trust, pen, ethnic, access, sludg, film, research, consum, '', use, &, figur, et, “, mass, also, result, ”, attitud, adsorb, peopl, -, <, work, studi, effect, al
 
 
 k = 10
-Cluster 0: 10
-Cluster 1: 4
-Cluster 2: 2, 9, 11, 21, 22, 25
-Cluster 3: 19, 24
-Cluster 4: 3, 5, 6, 8, 15, 18
-Cluster 5: 13, 17
-Cluster 6: 12, 14, 20, 23
-Cluster 7: 16
-Cluster 8: 1
-Cluster 9: 7
+Cluster 0: 4
+Cluster 1: 8
+Cluster 2: 1
+Cluster 3: 7
+Cluster 4: 3
+Cluster 5: 6
+Cluster 6: 5
+Cluster 7: 2
+Cluster 8: 10
+Cluster 9: 9
 
 The top 50 vocabulary terms for each cluster ranked by tf/idf:
 
 Cluster 0:
-restaur, consum, trust, ), (, ethnic, fda, cosmopolitan, cultur, attitud, onlin, visual, reput, inform, effect, food, &, menu, ’, purchas, hofsted, toward, intent, :, ;, moder, uncertainti, higher, studi, result, ofd, valu, item, app, orient, peopl, mediat, research, particip, degre, cleveland, avoid, indulg, lower, market, laroch, relationship, minkov, individu, posit
+deform, method, ), (, =, templat, energi, stick, :, point, elast, ], [, shot, hockey, constraint, use, diﬀer, curv, system, shape, shell, fem, tetrahedron, discret, +, angl, linear, stiﬀ, bend, 3d, element, reconstruct, , , iter, model, triangl, axi, spring, physics-bas, matrix, mesh, result, ”, two, ﬁnd, ﬁnite, ﬁtting, modulu
 
 Cluster 1:
-deform, method, stick, ), (, templat, shot, hockey, =, energi, :, ], [, diﬀer, point, elast, constraint, tetrahedron, shell, stiﬀ, use, system, fem, angl, triangl, curv, physics-bas, reconstruct, , , axi, element, ﬁtting, ﬁnite, bend, spring, +, shape, co-rot, stereo, mesh, matrix, linear, discret, cloud, model, 3d, ”, iter, result
+), (, investor, *, institut, firm, ’, visit, csv, ln, dummi, corpor, site, monitor, variabl, cash, manag, ownership, :, merger, stock, ye, csv+1, tabl, analyst, &, market, regress, csvt+1, test, csmar, et, privat, sharehold, %, io, sampl, announc, perform, result, car, year, valu, coeffici, top, effect, invest, return, inform, financi
 
 Cluster 2:
-), (, [, ], =, :, %, workplac, ldpc, trajectori, attack, +, data, decod, wdp, ﬂight, domain, optim, design, code, kd, worker, mass, boson, use, 𝑥, model, ergonom, ', fig, +1, node, tf, -1, method, smote, n/a, −, learn, higg, lut, detect, train, ``, grid, “, valu, sourc, tev, tabl
+deposit, open, access, member, creativ, spectrum, faculti, librarian, peer-review, senat, refere, freeli, academ, requir, work, dissemin, repositori, copi, univers, concordia, preserv, permiss, right, fund, research, ;, respons, publish, wherea, nonexclus, notifi, non-exclus, opt, staff, launch, exemplifi, co-author, venu, voluntarili, succe, electron, output, journal, everyon, intellectu, prejudic, cite, bind, discourag, holder
 
 Cluster 3:
-read, student, ), (, refuge, teacher, educ, learn, classroom, school, , particip, book, ’, :, experi, newcom, languag, learner, adult, skill, stori, print, new, elementari, habit, recollect, exposur, literaci, memori, teach, mezirow, immigr, commun, unfavour, &, creativ, “, ”, instruct, transform, cultur, activ, practic, appleg, favour, life, dewey, grade, high
+volunt, neighbour, student, pen, design, letter, program, :, china, app, ), (, user, figur, cultur, rural, teacher, teach, particip, ​, write, short-term, would, educ, penpal, ’, “, research, school, ”, colour, probe, paper, class, embodi, differ, use, also, ?, favorit, like, experi, chines, kit, participatori, commun, learn, plane, help, one
 
 Cluster 4:
-), (, ;, :, $, investor, carbon, log, ’, china, bond, sludg, %, *, film, self-heal, chines, =, java.lang.str, rmdbc, adsorb, et, cnt, --, polym, ccp, institut, app, figur, firm, jia, use, adsorpt, ``, peopl, >, al, android, worker, mg, java.lang.stringbuild, '', wastewat, <, , visit, l-1, sanm, csv, price
+), (, sludg, adsorb, carbon, adsorpt, al, mg, wastewat, et, l-1, activ, wwtp, eom, '', ``, effluent, compound, water, surfac, sba, ss, pharmaceut, ven, treatment, concentr, -, :, °c, chemic, remov, g-1, hw, sewag, temperatur, %, sampl, m., pyrolysi, sorption, secondari, solid, product, metabolit, sludge-bas, koh, cgac, m2, s., wast
 
 Cluster 5:
-ultrasound, imag, rpca, ], [, strain, rf, ), (, algorithm, frame, data, displac, pca-glu, use, clutter, elastographi, phantom, ”, “, pp, decomposit, nmf, vol, b-mode, :, axial, vivo, spars, low-rank, method, matrix, glue, ieee, dlsm, blood, princip, estim, compon, tissu, color, cnr, m., result, classifi, robust, bar, ncc, pair, filter
+$, log, (, ), :, java.lang.str, ;, <, app, --, >, android, =, java.lang.stringbuild, virtualinvok, taint, theme, r3, code, ``, r0., net.intricare.gobrowserkiosklockdown.services.f, statement, data, person, flow, '', softwar, leak, r4, develop, append, r5, r6, use, catch, [, ], analysi, java.lang.except, figur, keyboard, leakag, sourc, ”, “, int, list, android.location.loc, sink
 
 Cluster 6:
-*, ), (, delamin, -1, autocorrel, cash, plywood, veneer, wood, stock, moistur, portfolio, return, :, financ, lag, signific, defect, use, model, fcf, beta, firm, adhes, tabl, corpor, product, cultur, effect, flow, temperatur, free, bidder, result, market, glue, mold, govern, %, =, , cash_fin, frequenc, announc, variabl, data, industri, regress, figur
+), (, chines, film, china, worker, ccp, jia, ’, peopl, sanm, migrant, social, mao, platform, life, polit, gorg, natur, cultur, world, “, reform, ”, urban, polici, landscap, tao, zhangk, taisheng, citi, newspap, cinemat, artist, :, ;, dam, demolit, daili, scene, protagonist, travel, econom, cinema, ancient, chang, fengji, capit, environment, human
 
 Cluster 7:
-mc, vdp, sheath, assembl, wet, exterior, wall, insul, osb, simul, moistur, dri, rain, wood, %, ), vapor, mold, (, plywood, hygrotherm, block, diffus, east, port, plate, layer, wool, without, deposit, effect, figur, orient, wood-fram, xp, bottom, use, index, infiltr, roof, durabl, miner, result, initi, surfac, climat, condit, experi, weather, vent
+(, ), ], [, mass, boson, =, higg, tev, gaug, +, →, gev, lsp, neutralino, −, phi, z′, ckm, r, decay, model, bound, l, panel, β, symmetri, lhc, gr, scenario, right, dm, neutrino, paramet, relic, wr, fermion, constraint, lightest, bm, br, g2, mix, u, densiti, dark, µ, sm, particl, quark
 
 Cluster 8:
-deposit, access, open, spectrum, creativ, faculti, librarian, senat, peer-review, refere, freeli, member, dissemin, repositori, copi, requir, work, academ, preserv, permiss, concordia, univers, co-author, venu, nonexclus, succe, opt, non-exclus, notifi, exemplifi, fund, right, launch, voluntarili, elsewher, ;, electron, research, output, wherea, publish, discourag, disallow, cite, bind, prejudic, intellectu, staff, appear, scholarli
+restaur, ), (, trust, consum, ethnic, attitud, onlin, cultur, fda, cosmopolitan, inform, visual, &, effect, ’, :, toward, ;, hofsted, moder, reput, purchas, menu, intent, food, higher, studi, uncertainti, result, valu, avoid, orient, degre, research, ofd, app, item, lower, peopl, relationship, journal, individu, market, power, particip, use, servic, posit, indulg
 
 Cluster 9:
-volunt, student, pen, neighbour, letter, design, china, program, app, :, rural, ), (, user, cultur, particip, teacher, ​, figur, penpal, teach, educ, write, short-term, probe, ’, “, embodi, colour, would, kit, ”, research, class, paper, participatori, school, chines, favorit, learn, experi, also, differ, ?, use, backpack, like, commun, messeng, person
+), (, =, [, ], ', smote, #, ``, :, y_test, ax, confusion_matrix, 𝑥, '', logist, fontsize=14, undersampl, regress, claim, learning_r, confus, print, import, gradient, fraudul, data, matrix, dataset, {, roc, classifi, x_test, }, recal, \n, score, precis, sklearn.metr, variabl, recall_scor, fraud, 𝑓, boost, y_train, forest, roc_curv, curv, method, 𝑥𝑖
 
 
-k = 20
-Cluster 0: 10
-Cluster 1: 4
-Cluster 2: 2
-Cluster 3: 19
-Cluster 4: 8
-Cluster 5: 13
-Cluster 6: 12, 14, 20, 23
-Cluster 7: 16
-Cluster 8: 1
-Cluster 9: 7
-Cluster 10: 21
-Cluster 11: 6
-Cluster 12: 11
-Cluster 13: 5
-Cluster 14: 25
-Cluster 15: 9, 15, 18
-Cluster 16: 17
-Cluster 17: 3
-Cluster 18: 24
-Cluster 19: 22
-
-The top 50 vocabulary terms for each cluster ranked by tf/idf:
-
-Cluster 0:
-restaur, consum, trust, ), (, ethnic, fda, cosmopolitan, cultur, attitud, onlin, visual, reput, inform, effect, food, &, menu, ’, purchas, hofsted, toward, intent, :, ;, moder, uncertainti, higher, studi, result, ofd, valu, item, app, orient, peopl, mediat, research, particip, degre, cleveland, avoid, indulg, lower, market, laroch, relationship, minkov, individu, posit
-
-Cluster 1:
-deform, method, stick, ), (, templat, shot, hockey, =, energi, :, ], [, diﬀer, point, elast, constraint, tetrahedron, shell, stiﬀ, use, system, fem, angl, triangl, curv, physics-bas, reconstruct, , , axi, element, ﬁtting, ﬁnite, bend, spring, +, shape, co-rot, stereo, mesh, matrix, linear, discret, cloud, model, 3d, ”, iter, result
-
-Cluster 2:
-(, ), boson, ], [, mass, higg, tev, =, →, gev, gaug, lsp, neutralino, z′, +, ckm, phi, −, β, lhc, symmetri, bound, gr, r, decay, relic, dm, neutrino, fermion, wr, lightest, l, model, sm, scenario, bm, dark, br, constraint, atla, right-hand, quark, left, sneutrino, u, right, supersymmetr, panel, lepton
-
-Cluster 3:
-read, ), (, teacher, book, particip, classroom, school, student, print, elementari, recollect, exposur, habit, memori, ’, unfavour, :, appleg, favour, instruct, skill, grade, high, “, rememb, ”, experi, practic, *, questionnair, stanovich, prompt, fiction, art, &, et, ask, ;, autonomi, compet, posit, pleas, earli, time, studi, e.g., reader, literaci, pleasur
-
-Cluster 4:
-), (, investor, *, institut, firm, csv, visit, ln, ’, dummi, site, corpor, monitor, ownership, manag, cash, merger, csv+1, :, variabl, stock, analyst, ye, csvt+1, market, tabl, csmar, &, io, privat, car, announc, test, regress, sharehold, top, csvn+1, et, sampl, china, calendar, %, b/m, financi, abnorm, result, year, perform, roa
-
-Cluster 5:
-rpca, ultrasound, [, ], algorithm, clutter, decomposit, nmf, data, imag, low-rank, matrix, spars, ), (, dlsm, blood, ”, “, pp, vol, filter, lrr, phantom, ieee, td, tensor, robust, svd, suppress, :, compon, subspac, mc, tissu, vessel, cnr, non-neg, simul, result, nois, signal, rank, rf, singular, b-mode, pca, m., envelop, princip
-
-Cluster 6:
-*, ), (, delamin, -1, autocorrel, cash, plywood, veneer, wood, stock, moistur, portfolio, return, :, financ, lag, signific, defect, use, model, fcf, beta, firm, adhes, tabl, corpor, product, cultur, effect, flow, temperatur, free, bidder, result, market, glue, mold, govern, %, =, , cash_fin, frequenc, announc, variabl, data, industri, regress, figur
-
-Cluster 7:
-mc, vdp, sheath, assembl, wet, exterior, wall, insul, osb, simul, moistur, dri, rain, wood, %, ), vapor, mold, (, plywood, hygrotherm, block, diffus, east, port, plate, layer, wool, without, deposit, effect, figur, orient, wood-fram, xp, bottom, use, index, infiltr, roof, durabl, miner, result, initi, surfac, climat, condit, experi, weather, vent
-
-Cluster 8:
-deposit, access, open, spectrum, creativ, faculti, librarian, senat, peer-review, refere, freeli, member, dissemin, repositori, copi, requir, work, academ, preserv, permiss, concordia, univers, co-author, venu, nonexclus, succe, opt, non-exclus, notifi, exemplifi, fund, right, launch, voluntarili, elsewher, ;, electron, research, output, wherea, publish, discourag, disallow, cite, bind, prejudic, intellectu, staff, appear, scholarli
-
-Cluster 9:
-volunt, student, pen, neighbour, letter, design, china, program, app, :, rural, ), (, user, cultur, particip, teacher, ​, figur, penpal, teach, educ, write, short-term, probe, ’, “, embodi, colour, would, kit, ”, research, class, paper, participatori, school, chines, favorit, learn, experi, also, differ, ?, use, backpack, like, commun, messeng, person
-
-Cluster 10:
-workplac, wdp, worker, design, ergonom, +1, ), (, -1, n/a, [, ], reba, rula, fig, :, task, height, mt, 3d, score, risk, modular, postur, surrog, model, optim, ct, work, wp, use, altern, st, dsd, e.g., simul, valu, anim, bodi, motion, method, visual, construct, surfac, ii, %, analysi, assess, piec, http
-
-Cluster 11:
-$, log, java.lang.str, --, (, ), app, :, ;, android, java.lang.stringbuild, >, <, virtualinvok, =, taint, theme, r0., net.intricare.gobrowserkiosklockdown.services.f, r3, statement, ``, person, leak, catch, r5, softwar, data, r6, keyboard, code, java.lang.except, r4, '', append, sink, int, android.location.loc, goto, flow, sourc, staticinvok, [, ], “, ”, r3., jimpl, develop, analysi
-
-Cluster 12:
-%, attack, domain, data, ), (, [, ], grid, learn, smart, classiﬁ, train, detect, domain-adversari, intrus, transfer, target, label, tl, network, threat, system, :, ieee, pp, “, ”, id, machin, normal, sourc, featur, adapt, distribut, accuraci, differ, cyber-phys, vol, spatiotempor, extractor, semi-supervis, shift, neural, load, case, dataset, adversari, classiﬁc, =
-
-Cluster 13:
-china, chines, ), film, (, ccp, jia, peopl, worker, sanm, ’, migrant, social, gorg, mao, platform, life, polit, landscap, cultur, urban, polici, zhangk, citi, world, taisheng, reform, “, newspap, tao, ”, cinemat, natur, demolit, dam, scene, daili, artist, cinema, fengji, travel, protagonist, ancient, capitalist, fenyang, ;, capit, :, econom, beij
-
-Cluster 14:
-ldpc, decod, ), (, code, node, lut, =, 𝑥, pariti, fpga, ≤, check, 𝑦, tanh−1, :, cach, [, ], lookup, ralut, hardwar, channel, encod, messag, bit, sourc, tangent, hyperbol, tabl, tanh𝑥, rate, use, implement, , matrix, compress, algorithm, figur, 𝑋, 𝐻, slepian, data, variabl, inform, approxim, method, dvb-s2, 𝑛, input
-
-Cluster 15:
-), (, =, ;, :, bond, self-heal, ', rmdbc, cnt, ], [, polym, %, smote, , #, ``, price, c, , forecast, j, crosslink, figur, nelson-siegel, copolym, anisol, network, gel, use, y_test, spread, ax, curv, confusion_matrix, z-spread, p., , carbon, method, day, rmdbc/cnt, reactiv, predict, , , polymer, 𝑥, pu
-
-Cluster 16:
-strain, ultrasound, imag, rf, frame, displac, pca-glu, elastographi, (, ), use, axial, glue, vivo, [, ], estim, b-mode, phantom, method, bar, ncc, pair, :, classifi, data, color, pp, princip, cnn, “, ”, vol, mlp, liver, dataset, dp, ieee, differ, select, figur, ablat, rivaz, line, =, comput, train, m., deform, learn
-
-Cluster 17:
-), (, sludg, carbon, adsorb, adsorpt, wastewat, l-1, wwtp, mg, eom, effluent, al, et, ``, '', sba, activ, compound, ven, surfac, pharmaceut, water, ss, treatment, g-1, hw, sewag, -, °c, pyrolysi, concentr, :, temperatur, sorption, remov, metabolit, chemic, koh, cgac, sludge-bas, sampl, product, %, m., wast, micropollut, secondari, pore, nitrogen
-
-Cluster 18:
-refuge, student, educ, learn, ), (, , teacher, newcom, learner, languag, adult, new, experi, stori, immigr, mezirow, classroom, commun, :, school, creativ, ’, transform, literaci, dewey, cultur, skill, teach, countri, social, life, critic, challeng, trauma, activ, think, peopl, write, live, process, differ, &, english, help, state, use, world, facilit, role
-
-Cluster 19:
-), (, trajectori, ﬂight, kd, tf, optim, +, =, [, ], aircraft, wind, , , , ci, thrust, veloc, time, t2, cost, , :, eﬀect, cruis, solut, control, passeng, k2, e, c2, =, ”, “, problem, altitud, pp, drag, peak, constraint, 2k2, ﬁnd, t3, eﬀort, function, fig, −kd, t0, xf
-
-
+Error: Cannot perform k-means clustering when k > total documents collected. (k = 20; Total Documents Collected = 10)

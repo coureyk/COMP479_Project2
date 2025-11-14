@@ -174,7 +174,7 @@ class InvertedIndex:
     
     def run(self):
         self.chooseStrategy() #Choose whether you want to populate index using BSBI or SPIMI
-        self.setCapacity(10000) 
+        self.setCapacity(None) 
         print()
         
         start = time.perf_counter()

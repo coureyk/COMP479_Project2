@@ -52,24 +52,30 @@ def clusterDocs(index):
             kmeans.fit(tfidfMatrix)
 
             labels = kmeans.labels_
-
-            #Inspect Results
+            
+            #Write results
             f.write(f"k = {numOfClusters}\n")
-            clusteredDocs = pd.DataFrame({
-                "docID": docIDs,
-                "cluster": labels
-            })
-            clusteredDocs.to_csv(f, sep = "\t", index = False)
+            for clusterNum in range(numOfClusters):
+                #Get docIDs for the current cluster and ensure they are strings
+                clusterDocIDs = [str(docIDs[j]) for j in range(len(docIDs)) if labels[j] == clusterNum]
+
+                #Join the docIDs with commas
+                if clusterDocIDs:
+                    f.write(f"Cluster {clusterNum}: {', '.join(clusterDocIDs)}\n")
+                else:
+                    f.write(f"Cluster {clusterNum}: No documents\n")
             f.write("\n")
 
             #See which terms are most characteristic of each cluster
             orderCentroids = kmeans.cluster_centers_.argsort()[:, ::-1]
             terms = np.array(terms)
             
+            f.write("The top 50 vocabulary terms for each cluster ranked by tf/idf:\n\n")
             for i in range(numOfClusters):
                 f.write(f"Cluster {i}:\n")
                 f.write(", ".join(terms[orderCentroids[i, :50]]))  # top 50 terms
                 f.write("\n\n")
+            f.write("\n")
 
 def main():    
     index = InvertedIndex()

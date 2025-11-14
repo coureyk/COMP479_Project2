@@ -11,10 +11,10 @@ class WebCrawler(CrawlSpider):
     start_urls = ["https://spectrum.library.concordia.ca"]
     allowed_domains = ["library.concordia.ca"]
     
-    pdfLimit = 10
+    pdfLimit = 25
 
     pdfPattern = r"\.pdf"
-    htmlPattern = r"(\/\d{4})\.(html)$"
+    htmlPattern = r"(\/2\d2\d)\.(html)$" #matches with 2x1x.html (i.e. 2010+.html)
     eprintPattern = r"id\/eprint"
     thesisPattern = r"\/thesis[^\/]*\/$"
 
@@ -108,12 +108,16 @@ class WebCrawler(CrawlSpider):
                 if self.index.hasReachedFullCapacity():
                         break
         
+        os.remove(pdfPath)
         if hasTokens is False:
             self.logger.warning(f"No text extracted from any page of '{filename}'. Skipping PDF.")
-            os.remove(pdfPath)
-            return
         else:
             self.downloadedFiles.add(filename)
             self.index.setNumOfDocumentsCollected(curDocID)
+
+            pdfLinkPath = os.path.join(self.downloadsDir, "Links.txt")
+            with open(pdfLinkPath, "a") as f:
+                f.write(f"{curDocID}) {response.url}\n")
+
+            print(f"File successfully indexed and saved within: {pdfLinkPath}")
             curDocID += 1
-            print(f"Saved and indexed file: {pdfPath}")

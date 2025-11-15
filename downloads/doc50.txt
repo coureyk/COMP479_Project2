@@ -1,0 +1,6 @@
+Thank / Doc ID: 50 / Pos: 1
+you / Doc ID: 50 / Pos: 2
+for / Doc ID: 50 / Pos: 3
+your / Doc ID: 50 / Pos: 4
+interest / Doc ID: 50 / Pos: 5
+. / Doc ID: 50 / Pos: 6

@@ -68,15 +68,6 @@ def clusterDocs(index):
 
             #See which terms are most characteristic of each cluster
             terms = np.array(terms)
-            
-            """
-            f.write("The top 50 vocabulary terms for each cluster ranked by tf/idf:\n\n")
-            for i in range(numOfClusters):
-                f.write(f"Cluster {i}:\n")
-                f.write(", ".join(terms[orderCentroids[i, :50]]))  #Write the top 50 terms to the file
-                f.write("\n\n")
-            f.write("\n")
-            """
 
             for i in range(numOfClusters):
                 f.write(f"Cluster {i}:\n")
@@ -87,10 +78,10 @@ def clusterDocs(index):
                 #Create a pandas Series from the centroid (mapping terms to their TF-IDF weights)
                 centroidSeries = pd.Series(centroid, index=terms)
 
-                # Sort top 50 terms by their TF-IDF weight (descending order)
+                #Sort top 50 terms by their TF-IDF weight (descending order)
                 topTerms = centroidSeries.sort_values(ascending=False).head(50)
 
-                # Write the top 50 terms and their TF-IDF weights to the file
+                #Write the top 50 terms and their TF-IDF weights to the file
                 for idx, (term, weight) in enumerate(topTerms.items()):
                     if idx == len(topTerms) - 1:
                         f.write(f"{term}: {weight:.4f}")
